@@ -1,0 +1,189 @@
+2020-12-19 00:00:08.370 [cluster-ClusterId{value='5fd9b3a32777145e86587e70', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:88, serverValue:474}] to 103.100.210.203:27017
+2020-12-19 07:45:07.849 [cluster-ClusterId{value='5fd9b3a32777145e86587e70', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:89, serverValue:480}] to 103.100.210.203:27017
+2020-12-19 09:27:47.875 [cluster-ClusterId{value='5fd9b3a32777145e86587e70', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:90, serverValue:481}] to 103.100.210.203:27017
+2020-12-19 09:28:27.739 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - Starting PaperResourceBackendApplication on huandeMacBook-Pro.local with PID 98757 (/Users/huanchen/Project/out/paper-resource-backend/build/classes/java/main started by huanchen in /Users/huanchen/Project/out/paper-resource-backend)
+2020-12-19 09:28:27.741 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - No active profile set, falling back to default profiles: default
+2020-12-19 09:28:27.780 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-19 09:28:27.781 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-19 09:28:28.212 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-12-19 09:28:28.228 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 11ms. Found 0 MongoDB repository interfaces.
+2020-12-19 12:10:16.861 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-12-19 12:10:16.875 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-12-19 12:10:16.876 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-12-19 12:10:16.876 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-19 12:10:16.956 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2020-12-19 12:10:16.956 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 9709175 ms
+2020-12-19 12:10:17.191 [restartedMain] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[103.100.210.203:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2020-12-19 12:10:17.404 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-12-19 12:10:17.752 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-19 12:10:17.973 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-12-19 12:10:18.003 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/api'
+2020-12-19 12:10:18.029 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - Started PaperResourceBackendApplication in 17.185 seconds (JVM running for 17.604)
+2020-12-19 12:10:27.245 [cluster-ClusterId{value='5fdd7d29b6e7234ee5aba3ac', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server 103.100.210.203:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:127)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:63)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 3 common frames omitted
+2020-12-19 12:11:14.958 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - Starting PaperResourceBackendApplication on huandeMacBook-Pro.local with PID 98864 (/Users/huanchen/Project/out/paper-resource-backend/build/classes/java/main started by huanchen in /Users/huanchen/Project/out/paper-resource-backend)
+2020-12-19 12:11:14.962 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - No active profile set, falling back to default profiles: default
+2020-12-19 12:11:15.042 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-19 12:11:15.043 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-19 12:11:15.622 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-12-19 12:11:15.643 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 15ms. Found 0 MongoDB repository interfaces.
+2020-12-19 12:11:16.009 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-12-19 12:11:16.023 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-12-19 12:11:16.023 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-12-19 12:11:16.024 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-19 12:11:16.095 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2020-12-19 12:11:16.095 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1052 ms
+2020-12-19 12:11:16.239 [restartedMain] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[103.100.210.203:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2020-12-19 12:11:16.299 [cluster-ClusterId{value='5fdd7d64d69dbb26f29860a6', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server 103.100.210.203:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:127)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:117)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.ConnectException: Network is unreachable (connect failed)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:63)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 3 common frames omitted
+2020-12-19 12:11:16.470 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-12-19 12:11:16.714 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-19 12:11:16.847 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-12-19 12:11:16.877 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/api'
+2020-12-19 12:11:16.885 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - Started PaperResourceBackendApplication in 2.717 seconds (JVM running for 3.553)
+2020-12-19 12:11:26.443 [cluster-ClusterId{value='5fdd7d64d69dbb26f29860a6', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:483}] to 103.100.210.203:27017
+2020-12-19 12:11:26.481 [cluster-ClusterId{value='5fdd7d64d69dbb26f29860a6', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=103.100.210.203:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=36322193}
+2020-12-19 12:12:39.247 [cluster-ClusterId{value='5fdd7d64d69dbb26f29860a6', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server 103.100.210.203:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:127)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.ConnectException: Network is unreachable (connect failed)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:63)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 3 common frames omitted
+2020-12-19 12:12:49.379 [cluster-ClusterId{value='5fdd7d64d69dbb26f29860a6', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:484}] to 103.100.210.203:27017
+2020-12-19 12:12:49.414 [cluster-ClusterId{value='5fdd7d64d69dbb26f29860a6', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=103.100.210.203:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=35098411}
+2020-12-19 12:13:32.963 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-19 12:13:32.964 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-12-19 12:13:32.993 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 29 ms
+2020-12-19 12:13:33.465 [http-nio-8080-exec-1] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:485}] to 103.100.210.203:27017
+2020-12-19 12:38:01.403 [Thread-4] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-19 12:38:01.406 [Thread-4] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:5, serverValue:485}] to 103.100.210.203:27017 because the pool has been closed.
+2020-12-19 12:38:01.614 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - Starting PaperResourceBackendApplication on huandeMacBook-Pro.local with PID 98864 (/Users/huanchen/Project/out/paper-resource-backend/build/classes/java/main started by huanchen in /Users/huanchen/Project/out/paper-resource-backend)
+2020-12-19 12:38:01.614 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - No active profile set, falling back to default profiles: default
+2020-12-19 12:38:01.804 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-12-19 12:38:01.808 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 3ms. Found 0 MongoDB repository interfaces.
+2020-12-19 12:38:01.864 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-12-19 12:38:01.864 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-12-19 12:38:01.865 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-12-19 12:38:01.865 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-19 12:38:01.873 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2020-12-19 12:38:01.873 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 255 ms
+2020-12-19 12:38:01.924 [restartedMain] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[103.100.210.203:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2020-12-19 12:38:01.937 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-12-19 12:38:01.987 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-19 12:38:02.023 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-12-19 12:38:02.025 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/api'
+2020-12-19 12:38:02.028 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - Started PaperResourceBackendApplication in 0.576 seconds (JVM running for 1597.432)
+2020-12-19 12:38:02.029 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-12-19 12:38:02.340 [cluster-ClusterId{value='5fdd83a9d69dbb26f29860a8', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:6, serverValue:486}] to 103.100.210.203:27017
+2020-12-19 12:38:02.375 [cluster-ClusterId{value='5fdd83a9d69dbb26f29860a8', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=103.100.210.203:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=34085394}
+2020-12-19 12:38:11.552 [Thread-8] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-19 12:38:11.609 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - Starting PaperResourceBackendApplication on huandeMacBook-Pro.local with PID 98864 (/Users/huanchen/Project/out/paper-resource-backend/build/classes/java/main started by huanchen in /Users/huanchen/Project/out/paper-resource-backend)
+2020-12-19 12:38:11.609 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - No active profile set, falling back to default profiles: default
+2020-12-19 12:38:11.718 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-12-19 12:38:11.721 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 2ms. Found 0 MongoDB repository interfaces.
+2020-12-19 12:38:11.764 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-12-19 12:38:11.764 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-12-19 12:38:11.764 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-12-19 12:38:11.764 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-19 12:38:11.774 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2020-12-19 12:38:11.774 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 162 ms
+2020-12-19 12:38:11.800 [restartedMain] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[103.100.210.203:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2020-12-19 12:38:11.811 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-12-19 12:38:11.855 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-19 12:38:11.885 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-12-19 12:38:11.887 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/api'
+2020-12-19 12:38:11.889 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - Started PaperResourceBackendApplication in 0.301 seconds (JVM running for 1607.294)
+2020-12-19 12:38:11.890 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-12-19 12:38:12.032 [cluster-ClusterId{value='5fdd83b3d69dbb26f29860a9', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:7, serverValue:487}] to 103.100.210.203:27017
+2020-12-19 12:38:12.067 [cluster-ClusterId{value='5fdd83b3d69dbb26f29860a9', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=103.100.210.203:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=34096738}
+2020-12-19 12:38:37.545 [Thread-13] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-19 12:38:37.606 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - Starting PaperResourceBackendApplication on huandeMacBook-Pro.local with PID 98864 (/Users/huanchen/Project/out/paper-resource-backend/build/classes/java/main started by huanchen in /Users/huanchen/Project/out/paper-resource-backend)
+2020-12-19 12:38:37.606 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - No active profile set, falling back to default profiles: default
+2020-12-19 12:38:37.710 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-12-19 12:38:37.712 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 2ms. Found 0 MongoDB repository interfaces.
+2020-12-19 12:38:37.748 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-12-19 12:38:37.749 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-12-19 12:38:37.749 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-12-19 12:38:37.749 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-19 12:38:37.756 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2020-12-19 12:38:37.756 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 148 ms
+2020-12-19 12:38:37.798 [restartedMain] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[103.100.210.203:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2020-12-19 12:38:37.807 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-12-19 12:38:37.844 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-19 12:38:37.871 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-12-19 12:38:37.872 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/api'
+2020-12-19 12:38:37.875 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - Started PaperResourceBackendApplication in 0.29 seconds (JVM running for 1633.279)
+2020-12-19 12:38:37.876 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-12-19 12:38:37.904 [cluster-ClusterId{value='5fdd83cdd69dbb26f29860aa', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:8, serverValue:488}] to 103.100.210.203:27017
+2020-12-19 12:38:37.940 [cluster-ClusterId{value='5fdd83cdd69dbb26f29860aa', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=103.100.210.203:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=35194675}
+2020-12-19 13:17:42.142 [cluster-ClusterId{value='5fdd83cdd69dbb26f29860aa', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:9, serverValue:489}] to 103.100.210.203:27017
+2020-12-19 13:54:59.001 [cluster-ClusterId{value='5fdd83cdd69dbb26f29860aa', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:10, serverValue:524}] to 103.100.210.203:27017
+2020-12-19 14:04:33.934 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-19 14:04:33.934 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-12-19 14:04:33.936 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2020-12-19 14:04:34.276 [http-nio-8080-exec-1] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:11, serverValue:525}] to 103.100.210.203:27017
+2020-12-19 16:33:11.018 [cluster-ClusterId{value='5fdd83cdd69dbb26f29860aa', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:12, serverValue:526}] to 103.100.210.203:27017
+2020-12-19 17:50:25.972 [cluster-ClusterId{value='5fdd83cdd69dbb26f29860aa', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:13, serverValue:528}] to 103.100.210.203:27017
+2020-12-19 17:50:48.170 [http-nio-8080-exec-4] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:11, serverValue:525}] to 103.100.210.203:27017 because there was a socket exception raised on another connection from this pool.
+2020-12-19 17:50:48.435 [http-nio-8080-exec-4] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:14, serverValue:529}] to 103.100.210.203:27017
+2020-12-19 22:06:22.049 [cluster-ClusterId{value='5fdd83cdd69dbb26f29860aa', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server 103.100.210.203:27017
+com.mongodb.MongoSocketReadException: Exception receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:568)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:447)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:298)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:258)
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:83)
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:33)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initializeConnectionDescription(InternalStreamConnectionInitializer.java:103)
+	at com.mongodb.internal.connection.InternalStreamConnectionInitializer.initialize(InternalStreamConnectionInitializer.java:60)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:128)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.SocketException: Connection reset
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:186)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:140)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:579)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:444)
+	... 9 common frames omitted

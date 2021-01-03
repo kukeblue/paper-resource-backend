@@ -1,0 +1,222 @@
+2020-12-21 00:26:37.165 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:13, serverValue:560}] to 103.100.210.203:27017
+2020-12-21 01:16:01.286 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:14, serverValue:563}] to 103.100.210.203:27017
+2020-12-21 03:17:01.323 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:15, serverValue:564}] to 103.100.210.203:27017
+2020-12-21 05:17:50.344 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:16, serverValue:565}] to 103.100.210.203:27017
+2020-12-21 07:02:43.432 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:17, serverValue:573}] to 103.100.210.203:27017
+2020-12-21 08:27:47.602 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server 103.100.210.203:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:127)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.ConnectException: Network is unreachable (connect failed)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:63)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 3 common frames omitted
+2020-12-21 09:10:59.884 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:24, serverValue:574}] to 103.100.210.203:27017
+2020-12-21 09:10:59.941 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=103.100.210.203:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=55536811}
+2020-12-21 09:20:53.730 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:25, serverValue:575}] to 103.100.210.203:27017
+2020-12-21 09:24:37.523 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:26, serverValue:576}] to 103.100.210.203:27017
+2020-12-21 09:25:07.924 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server 103.100.210.203:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:127)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.ConnectException: Network is unreachable (connect failed)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:63)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 3 common frames omitted
+2020-12-21 09:25:18.216 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:28, serverValue:577}] to 103.100.210.203:27017
+2020-12-21 09:25:18.273 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=103.100.210.203:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=56789597}
+2020-12-21 09:26:59.251 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:29, serverValue:578}] to 103.100.210.203:27017
+2020-12-21 09:28:50.161 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:30, serverValue:579}] to 103.100.210.203:27017
+2020-12-21 09:33:12.809 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:31, serverValue:580}] to 103.100.210.203:27017
+2020-12-21 10:20:40.550 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server 103.100.210.203:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:127)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.SocketTimeoutException: connect timed out
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:63)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 3 common frames omitted
+2020-12-21 10:20:50.718 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:33, serverValue:581}] to 103.100.210.203:27017
+2020-12-21 10:20:50.770 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=103.100.210.203:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=51484383}
+2020-12-21 10:32:05.722 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:34, serverValue:582}] to 103.100.210.203:27017
+2020-12-21 10:32:15.723 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server 103.100.210.203:27017
+com.mongodb.MongoSocketReadTimeoutException: Timeout while receiving message
+	at com.mongodb.internal.connection.InternalStreamConnection.translateReadException(InternalStreamConnection.java:562)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:447)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveCommandMessageResponse(InternalStreamConnection.java:298)
+	at com.mongodb.internal.connection.InternalStreamConnection.sendAndReceive(InternalStreamConnection.java:258)
+	at com.mongodb.internal.connection.CommandHelper.sendAndReceive(CommandHelper.java:83)
+	at com.mongodb.internal.connection.CommandHelper.executeCommand(CommandHelper.java:38)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.lookupServerDescription(DefaultServerMonitor.java:180)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:137)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.SocketTimeoutException: Read timed out
+	at java.base/java.net.SocketInputStream.socketRead0(Native Method)
+	at java.base/java.net.SocketInputStream.socketRead(SocketInputStream.java:115)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:168)
+	at java.base/java.net.SocketInputStream.read(SocketInputStream.java:140)
+	at com.mongodb.internal.connection.SocketStream.read(SocketStream.java:109)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveResponseBuffers(InternalStreamConnection.java:579)
+	at com.mongodb.internal.connection.InternalStreamConnection.receiveMessage(InternalStreamConnection.java:444)
+	... 7 common frames omitted
+2020-12-21 10:32:25.888 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:35, serverValue:583}] to 103.100.210.203:27017
+2020-12-21 10:32:36.073 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:36, serverValue:584}] to 103.100.210.203:27017
+2020-12-21 10:32:56.247 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:37, serverValue:585}] to 103.100.210.203:27017
+2020-12-21 10:33:06.425 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:38, serverValue:586}] to 103.100.210.203:27017
+2020-12-21 10:33:26.608 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:39, serverValue:587}] to 103.100.210.203:27017
+2020-12-21 10:33:36.784 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:40, serverValue:588}] to 103.100.210.203:27017
+2020-12-21 10:33:56.968 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:41, serverValue:589}] to 103.100.210.203:27017
+2020-12-21 10:34:07.150 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:42, serverValue:590}] to 103.100.210.203:27017
+2020-12-21 10:34:27.332 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:43, serverValue:591}] to 103.100.210.203:27017
+2020-12-21 10:34:27.386 [cluster-ClusterId{value='5fded55deb542d07ab5ef582', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=103.100.210.203:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=52913374}
+2020-12-21 15:43:28.275 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-21 15:43:28.278 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-12-21 15:43:28.301 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 23 ms
+2020-12-21 15:43:28.775 [http-nio-8080-exec-1] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:44, serverValue:595}] to 103.100.210.203:27017
+2020-12-21 16:37:19.461 [http-nio-8080-exec-4] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:45, serverValue:596}] to 103.100.210.203:27017
+2020-12-21 16:37:43.087 [http-nio-8080-exec-3] WARN  org.mongodb.driver.connection - Got socket exception on connection [connectionId{localValue:44, serverValue:595}] to 103.100.210.203:27017. All connections to 103.100.210.203:27017 will be closed.
+2020-12-21 16:37:43.088 [http-nio-8080-exec-3] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:44, serverValue:595}] to 103.100.210.203:27017 because there was a socket exception raised by this connection.
+2020-12-21 16:37:43.091 [http-nio-8080-exec-3] INFO  org.mongodb.driver.cluster - No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=103.100.210.203:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+2020-12-21 16:37:43.554 [http-nio-8080-exec-3] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:45, serverValue:596}] to 103.100.210.203:27017 because there was a socket exception raised on another connection from this pool.
+2020-12-21 16:37:43.874 [http-nio-8080-exec-3] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:46, serverValue:597}] to 103.100.210.203:27017
+2020-12-21 16:38:43.347 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - Starting PaperResourceBackendApplication on localhost with PID 14463 (/Users/huanchen/Project/out/paper-resource-backend/build/classes/java/main started by huanchen in /Users/huanchen/Project/out/paper-resource-backend)
+2020-12-21 16:38:43.349 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - No active profile set, falling back to default profiles: default
+2020-12-21 16:38:43.399 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2020-12-21 16:38:43.399 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2020-12-21 16:38:43.880 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-12-21 16:38:43.899 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 14ms. Found 0 MongoDB repository interfaces.
+2020-12-21 16:38:44.247 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-12-21 16:38:44.257 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-12-21 16:38:44.257 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-12-21 16:38:44.257 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-21 16:38:44.312 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2020-12-21 16:38:44.312 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 912 ms
+2020-12-21 16:38:44.414 [restartedMain] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[103.100.210.203:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2020-12-21 16:38:44.576 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-12-21 16:38:44.797 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-21 16:38:44.915 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-12-21 16:38:44.944 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/api'
+2020-12-21 16:38:44.952 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - Started PaperResourceBackendApplication in 1.986 seconds (JVM running for 2.491)
+2020-12-21 16:38:44.991 [cluster-ClusterId{value='5fe05f14ea0c902a519e506b', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:598}] to 103.100.210.203:27017
+2020-12-21 16:38:45.047 [cluster-ClusterId{value='5fe05f14ea0c902a519e506b', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=103.100.210.203:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=54197634}
+2020-12-21 16:39:05.621 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-21 16:39:05.621 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-12-21 16:39:05.629 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2020-12-21 16:39:06.154 [http-nio-8080-exec-1] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:599}] to 103.100.210.203:27017
+2020-12-21 16:44:26.342 [Thread-4] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-21 16:44:26.346 [Thread-4] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:2, serverValue:599}] to 103.100.210.203:27017 because the pool has been closed.
+2020-12-21 16:44:26.420 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - Starting PaperResourceBackendApplication on localhost with PID 14463 (/Users/huanchen/Project/out/paper-resource-backend/build/classes/java/main started by huanchen in /Users/huanchen/Project/out/paper-resource-backend)
+2020-12-21 16:44:26.420 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - No active profile set, falling back to default profiles: default
+2020-12-21 16:44:26.586 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-12-21 16:44:26.590 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 3ms. Found 0 MongoDB repository interfaces.
+2020-12-21 16:44:26.643 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-12-21 16:44:26.644 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-12-21 16:44:26.644 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-12-21 16:44:26.644 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-21 16:44:26.655 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2020-12-21 16:44:26.655 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 232 ms
+2020-12-21 16:44:26.712 [restartedMain] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[103.100.210.203:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2020-12-21 16:44:26.729 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-12-21 16:44:26.794 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-21 16:44:26.844 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-12-21 16:44:26.847 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/api'
+2020-12-21 16:44:26.851 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - Started PaperResourceBackendApplication in 0.46 seconds (JVM running for 344.38)
+2020-12-21 16:44:26.852 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-12-21 16:44:26.907 [cluster-ClusterId{value='5fe0606aea0c902a519e506c', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:3, serverValue:600}] to 103.100.210.203:27017
+2020-12-21 16:44:26.962 [cluster-ClusterId{value='5fe0606aea0c902a519e506c', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=103.100.210.203:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=53097273}
+2020-12-21 16:58:00.563 [Thread-8] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-12-21 16:58:00.643 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - Starting PaperResourceBackendApplication on localhost with PID 14463 (/Users/huanchen/Project/out/paper-resource-backend/build/classes/java/main started by huanchen in /Users/huanchen/Project/out/paper-resource-backend)
+2020-12-21 16:58:00.644 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - No active profile set, falling back to default profiles: default
+2020-12-21 16:58:00.788 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2020-12-21 16:58:00.793 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 3ms. Found 0 MongoDB repository interfaces.
+2020-12-21 16:58:00.843 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2020-12-21 16:58:00.844 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2020-12-21 16:58:00.844 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2020-12-21 16:58:00.844 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2020-12-21 16:58:00.856 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2020-12-21 16:58:00.856 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 209 ms
+2020-12-21 16:58:00.887 [restartedMain] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[103.100.210.203:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2020-12-21 16:58:00.900 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2020-12-21 16:58:00.950 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2020-12-21 16:58:01.003 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2020-12-21 16:58:01.006 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/api'
+2020-12-21 16:58:01.010 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - Started PaperResourceBackendApplication in 0.393 seconds (JVM running for 1158.533)
+2020-12-21 16:58:01.012 [restartedMain] INFO  o.s.b.d.a.ConditionEvaluationDeltaLoggingListener - Condition evaluation unchanged
+2020-12-21 16:58:01.063 [cluster-ClusterId{value='5fe06398ea0c902a519e506d', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:4, serverValue:603}] to 103.100.210.203:27017
+2020-12-21 16:58:01.121 [cluster-ClusterId{value='5fe06398ea0c902a519e506d', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=103.100.210.203:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=57303734}
+2020-12-21 16:58:09.859 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2020-12-21 16:58:09.859 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2020-12-21 16:58:09.861 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 2 ms
+2020-12-21 16:58:10.286 [http-nio-8080-exec-1] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:5, serverValue:604}] to 103.100.210.203:27017
+2020-12-21 17:04:27.439 [http-nio-8080-exec-6] WARN  org.mongodb.driver.connection - Got socket exception on connection [connectionId{localValue:5, serverValue:604}] to 103.100.210.203:27017. All connections to 103.100.210.203:27017 will be closed.
+2020-12-21 17:04:27.441 [http-nio-8080-exec-6] INFO  org.mongodb.driver.connection - Closed connection [connectionId{localValue:5, serverValue:604}] to 103.100.210.203:27017 because there was a socket exception raised by this connection.
+2020-12-21 17:04:27.442 [http-nio-8080-exec-6] INFO  org.mongodb.driver.cluster - No server chosen by ReadPreferenceServerSelector{readPreference=primary} from cluster description ClusterDescription{type=UNKNOWN, connectionMode=SINGLE, serverDescriptions=[ServerDescription{address=103.100.210.203:27017, type=UNKNOWN, state=CONNECTING}]}. Waiting for 30000 ms before timing out
+2020-12-21 17:04:27.851 [http-nio-8080-exec-6] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:6, serverValue:605}] to 103.100.210.203:27017
+2020-12-21 18:13:10.807 [cluster-ClusterId{value='5fe06398ea0c902a519e506d', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server 103.100.210.203:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:127)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.ConnectException: Network is unreachable (connect failed)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:63)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 3 common frames omitted
+2020-12-21 20:08:57.855 [cluster-ClusterId{value='5fe06398ea0c902a519e506d', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:21, serverValue:606}] to 103.100.210.203:27017
+2020-12-21 20:08:58.668 [cluster-ClusterId{value='5fe06398ea0c902a519e506d', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=103.100.210.203:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=801904986}
+2020-12-21 20:11:55.263 [cluster-ClusterId{value='5fe06398ea0c902a519e506d', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server 103.100.210.203:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:127)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.ConnectException: Network is unreachable (connect failed)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:63)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 3 common frames omitted
+2020-12-21 22:01:56.634 [cluster-ClusterId{value='5fe06398ea0c902a519e506d', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:36, serverValue:607}] to 103.100.210.203:27017
+2020-12-21 22:01:56.808 [cluster-ClusterId{value='5fe06398ea0c902a519e506d', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=103.100.210.203:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=167885561}
+2020-12-21 22:17:00.062 [cluster-ClusterId{value='5fe06398ea0c902a519e506d', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:37, serverValue:608}] to 103.100.210.203:27017
+2020-12-21 22:32:49.378 [cluster-ClusterId{value='5fe06398ea0c902a519e506d', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:38, serverValue:609}] to 103.100.210.203:27017
+2020-12-21 23:27:50.318 [cluster-ClusterId{value='5fe06398ea0c902a519e506d', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:39, serverValue:610}] to 103.100.210.203:27017

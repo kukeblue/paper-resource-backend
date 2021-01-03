@@ -12,7 +12,7 @@ public class ThrowableHandler {
         Response response = new Response();
         response.setStatus(Response.STAUTS_FAILED);
         response.setErrorMsg(t.getMessage());
-        response.setErrorStack(getErrorStack(t));
+//        response.setErrorStack(getErrorStack(t));
         return response;
     }
 

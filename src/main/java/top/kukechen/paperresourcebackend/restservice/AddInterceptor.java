@@ -1,16 +1,16 @@
 package top.kukechen.paperresourcebackend.restservice;
 
+import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.config.annotation.CorsRegistry;
-import org.springframework.web.servlet.config.annotation.InterceptorRegistration;
 import org.springframework.web.servlet.config.annotation.InterceptorRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
 public class AddInterceptor implements WebMvcConfigurer {
 
-    @Override
-    public void addInterceptors(InterceptorRegistry registry) {
+//    @Override
+//    public void addInterceptors(InterceptorRegistry registry) {
 //        // 注册拦截器
 //        LoginInterceptor loginInterceptor = new LoginInterceptor();
 //        InterceptorRegistration loginRegistry = registry.addInterceptor(loginInterceptor);
@@ -25,8 +25,20 @@ public class AddInterceptor implements WebMvcConfigurer {
 //        loginRegistry.excludePathPatterns("/js/login/**/*.js");
 //        loginRegistry.excludePathPatterns("/image/login/*.png");
 //        registry.addInterceptor(new JwtInterceptor()).addPathPatterns("/**");
+//    }
+
+    @Override
+    public void addInterceptors(InterceptorRegistry registry) {
+
+        //默认拦截所有路径
+        registry.addInterceptor(authenticationInterceptor())
+                .addPathPatterns("/**");
     }
 
+    @Bean
+    public JwtAuthenticationInterceptor authenticationInterceptor() {
+        return new JwtAuthenticationInterceptor();
+    }
 
     /**
      * 跨域支持

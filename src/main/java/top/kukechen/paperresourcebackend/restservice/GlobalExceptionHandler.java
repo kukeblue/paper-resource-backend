@@ -5,6 +5,7 @@ import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
+import top.kukechen.paperresourcebackend.errorHandle.BusinessException;
 
 
 @ControllerAdvice
@@ -19,6 +20,13 @@ public class GlobalExceptionHandler {
     @ResponseStatus(HttpStatus.OK)
     @ExceptionHandler({Throwable.class})
     public Response handle(Throwable e) {
+        e.printStackTrace();
+        if(e instanceof BusinessException) {
+            System.out.println("业务异常："+e.getMessage());
+//            BusinessException businessException = (BusinessException)e;
+        }
         return ThrowableHandler.handle(e);
     }
+
+
 }
