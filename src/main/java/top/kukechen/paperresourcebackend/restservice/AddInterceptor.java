@@ -27,12 +27,18 @@ public class AddInterceptor implements WebMvcConfigurer {
 //        registry.addInterceptor(new JwtInterceptor()).addPathPatterns("/**");
 //    }
 
+    private  static  final  String[]  AUTH_WHITELIST  =  {
+            // -- swagger ui
+            "/swagger-resources/**",
+            "/swagger-ui.html",
+            "/v2/api-docs",
+            "/webjars/**"
+    };
+
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
-
         //默认拦截所有路径
-        registry.addInterceptor(authenticationInterceptor())
-                .addPathPatterns("/**");
+        registry.addInterceptor(authenticationInterceptor()).excludePathPatterns("/user/**","/swagger**/**").addPathPatterns("/**");
     }
 
     @Bean
