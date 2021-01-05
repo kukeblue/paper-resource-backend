@@ -1345,3 +1345,74 @@ Caused by: java.io.IOException: Broken pipe
 2021-01-05 15:30:32.454 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
 2021-01-05 15:30:32.461 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 7 ms
 2021-01-05 15:30:32.986 [http-nio-8080-exec-1] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:1409}] to 103.100.210.203:27017
+2021-01-05 15:36:32.603 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - Starting PaperResourceBackendApplication on DESKTOP-CR3MP79 with PID 11568 (E:\paper-resource-backend\build\classes\java\main started by hq in E:\paper-resource-backend)
+2021-01-05 15:36:32.608 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - No active profile set, falling back to default profiles: default
+2021-01-05 15:36:32.748 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-01-05 15:36:32.749 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-01-05 15:36:34.144 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-01-05 15:36:34.189 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 34ms. Found 0 MongoDB repository interfaces.
+2021-01-05 15:36:34.839 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-01-05 15:36:34.849 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-01-05 15:36:34.849 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-01-05 15:36:34.850 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-01-05 15:36:34.957 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2021-01-05 15:36:34.958 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 2208 ms
+2021-01-05 15:36:35.229 [restartedMain] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[103.100.210.203:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-01-05 15:36:35.414 [cluster-ClusterId{value='5ff41703fff4c64e775265fb', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:1410}] to 103.100.210.203:27017
+2021-01-05 15:36:35.470 [cluster-ClusterId{value='5ff41703fff4c64e775265fb', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=103.100.210.203:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=42813500}
+2021-01-05 15:36:35.615 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-01-05 15:36:36.211 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-01-05 15:36:36.338 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-05 15:36:36.503 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-01-05 15:36:36.539 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/api'
+2021-01-05 15:36:36.540 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2021-01-05 15:36:36.556 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2021-01-05 15:36:36.583 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2021-01-05 15:36:36.817 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addGradeUsingPOST_1
+2021-01-05 15:36:36.855 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getGradePageUsingPOST_1
+2021-01-05 15:36:36.887 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - Started PaperResourceBackendApplication in 5.804 seconds (JVM running for 8.307)
+2021-01-05 15:36:42.755 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-05 15:36:42.756 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-01-05 15:36:42.766 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 10 ms
+2021-01-05 15:36:43.415 [http-nio-8080-exec-1] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [top.kukechen.paperresourcebackend.errorHandle.NeedToLogin: 请先登录]
+2021-01-05 15:36:43.465 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [top.kukechen.paperresourcebackend.errorHandle.NeedToLogin: 请先登录]
+2021-01-05 15:37:26.163 [http-nio-8080-exec-9] INFO  t.k.p.controller.PaperController - 开始删除试卷: 1
+2021-01-05 15:37:26.560 [http-nio-8080-exec-9] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:1411}] to 103.100.210.203:27017
+2021-01-05 15:37:26.631 [http-nio-8080-exec-9] INFO  t.k.p.controller.PaperController - 删除试卷成功: id为1 删除结果 - result: 0
+2021-01-05 15:40:45.132 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [top.kukechen.paperresourcebackend.errorHandle.NeedToLogin: 请先登录]
+2021-01-05 15:40:45.224 [http-nio-8080-exec-8] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [top.kukechen.paperresourcebackend.errorHandle.NeedToLogin: 请先登录]
+2021-01-05 15:42:56.319 [http-nio-8080-exec-4] INFO  t.k.p.controller.PaperController - 开始删除试卷: string
+2021-01-05 15:42:56.357 [http-nio-8080-exec-4] INFO  t.k.p.controller.PaperController - 删除试卷成功: id为string 删除结果 - result: 0
+2021-01-05 15:53:41.459 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - Starting PaperResourceBackendApplication on DESKTOP-CR3MP79 with PID 3388 (E:\paper-resource-backend\build\classes\java\main started by hq in E:\paper-resource-backend)
+2021-01-05 15:53:41.461 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - No active profile set, falling back to default profiles: default
+2021-01-05 15:53:41.528 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - Devtools property defaults active! Set 'spring.devtools.add-properties' to 'false' to disable
+2021-01-05 15:53:41.528 [restartedMain] INFO  o.s.b.d.env.DevToolsPropertyDefaultsPostProcessor - For additional web related logging consider setting the 'logging.level.web' property to 'DEBUG'
+2021-01-05 15:53:42.689 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Bootstrapping Spring Data MongoDB repositories in DEFAULT mode.
+2021-01-05 15:53:42.710 [restartedMain] INFO  o.s.d.r.config.RepositoryConfigurationDelegate - Finished Spring Data repository scanning in 17ms. Found 0 MongoDB repository interfaces.
+2021-01-05 15:53:43.371 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat initialized with port(s): 8080 (http)
+2021-01-05 15:53:43.394 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Initializing ProtocolHandler ["http-nio-8080"]
+2021-01-05 15:53:43.394 [restartedMain] INFO  org.apache.catalina.core.StandardService - Starting service [Tomcat]
+2021-01-05 15:53:43.394 [restartedMain] INFO  org.apache.catalina.core.StandardEngine - Starting Servlet engine: [Apache Tomcat/9.0.39]
+2021-01-05 15:53:43.476 [restartedMain] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring embedded WebApplicationContext
+2021-01-05 15:53:43.476 [restartedMain] INFO  o.s.b.w.s.c.ServletWebServerApplicationContext - Root WebApplicationContext: initialization completed in 1946 ms
+2021-01-05 15:53:43.604 [restartedMain] INFO  org.mongodb.driver.cluster - Cluster created with settings {hosts=[103.100.210.203:27017], mode=SINGLE, requiredClusterType=UNKNOWN, serverSelectionTimeout='30000 ms'}
+2021-01-05 15:53:43.787 [cluster-ClusterId{value='5ff41b07a4ab33738d8cd925', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:1, serverValue:1412}] to 103.100.210.203:27017
+2021-01-05 15:53:43.840 [cluster-ClusterId{value='5ff41b07a4ab33738d8cd925', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=103.100.210.203:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=48604800}
+2021-01-05 15:53:43.948 [restartedMain] INFO  o.s.b.d.autoconfigure.OptionalLiveReloadServer - LiveReload server is running on port 35729
+2021-01-05 15:53:44.367 [restartedMain] INFO  s.d.s.w.PropertySourcedRequestMappingHandlerMapping - Mapped URL path [/v2/api-docs] onto method [springfox.documentation.swagger2.web.Swagger2Controller#getDocumentation(String, HttpServletRequest)]
+2021-01-05 15:53:44.455 [restartedMain] INFO  o.s.scheduling.concurrent.ThreadPoolTaskExecutor - Initializing ExecutorService 'applicationTaskExecutor'
+2021-01-05 15:53:44.590 [restartedMain] INFO  org.apache.coyote.http11.Http11NioProtocol - Starting ProtocolHandler ["http-nio-8080"]
+2021-01-05 15:53:44.622 [restartedMain] INFO  o.s.boot.web.embedded.tomcat.TomcatWebServer - Tomcat started on port(s): 8080 (http) with context path '/api'
+2021-01-05 15:53:44.624 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Context refreshed
+2021-01-05 15:53:44.640 [restartedMain] INFO  s.d.s.web.plugins.DocumentationPluginsBootstrapper - Found 1 custom documentation plugin(s)
+2021-01-05 15:53:44.666 [restartedMain] INFO  s.d.spring.web.scanners.ApiListingReferenceScanner - Scanning for api listing references
+2021-01-05 15:53:44.877 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: addGradeUsingPOST_1
+2021-01-05 15:53:44.913 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: editGradeUsingPOST_1
+2021-01-05 15:53:44.915 [restartedMain] INFO  s.d.s.w.r.operation.CachingOperationNameGenerator - Generating unique operation named: getGradePageUsingPOST_1
+2021-01-05 15:53:44.946 [restartedMain] INFO  t.k.p.PaperResourceBackendApplication - Started PaperResourceBackendApplication in 4.047 seconds (JVM running for 4.831)
+2021-01-05 15:53:54.959 [http-nio-8080-exec-1] INFO  o.a.c.c.ContainerBase.[Tomcat].[localhost].[/api] - Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-01-05 15:53:54.959 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Initializing Servlet 'dispatcherServlet'
+2021-01-05 15:53:54.967 [http-nio-8080-exec-1] INFO  org.springframework.web.servlet.DispatcherServlet - Completed initialization in 8 ms
+2021-01-05 15:53:55.767 [http-nio-8080-exec-3] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [top.kukechen.paperresourcebackend.errorHandle.NeedToLogin: 请先登录]
+2021-01-05 15:53:55.792 [http-nio-8080-exec-5] WARN  o.s.w.s.m.m.a.ExceptionHandlerExceptionResolver - Resolved [top.kukechen.paperresourcebackend.errorHandle.NeedToLogin: 请先登录]
+2021-01-05 15:54:04.570 [http-nio-8080-exec-10] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:2, serverValue:1413}] to 103.100.210.203:27017
