@@ -80,7 +80,7 @@ public class GradeStepController {
     @PassToken
     public Response<GradeStep> getGradeStepPage(@RequestBody ResponseWrap rw) {
         HashMap query = new HashMap<String, Object>();
-        PageModel page = MongoDBUtil.findSortPageCondition(Grade.class, "gradeStep", rw.getQuery(), rw.getPageNo(),  rw.getPageSize(), Sort.Direction.ASC, "created");
+        PageModel page = MongoDBUtil.findSortPageCondition(GradeStep.class, "gradeStep", rw.getQuery(), rw.getPageNo(),  rw.getPageSize(), Sort.Direction.ASC, "created");
         return new Response(STAUTS_OK, page);
     }
 }
