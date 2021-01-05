@@ -5,20 +5,25 @@ import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.UpdateResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.web.bind.annotation.*;
 import top.kukechen.paperresourcebackend.model.Grade;
+import top.kukechen.paperresourcebackend.model.Paper;
 import top.kukechen.paperresourcebackend.model.User;
 import top.kukechen.paperresourcebackend.restservice.Greeting;
 import top.kukechen.paperresourcebackend.restservice.Response;
 import top.kukechen.paperresourcebackend.restservice.ResponseWrap;
 import top.kukechen.paperresourcebackend.service.MongoDBUtil;
+import top.kukechen.paperresourcebackend.service.PageModel;
 import top.kukechen.paperresourcebackend.units.PassToken;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import static top.kukechen.paperresourcebackend.restservice.Response.STAUTS_FAILED;
 import static top.kukechen.paperresourcebackend.restservice.Response.STAUTS_OK;
@@ -73,5 +78,13 @@ public class GradeController {
         }else {
             return new Response(STAUTS_FAILED, "删除失败");
         }
+    }
+
+    @PostMapping("/page")
+    @PassToken
+    public Response<Grade> getGradePage(@RequestBody ResponseWrap rw) {
+        HashMap query = new HashMap<String, Object>();
+        PageModel page = MongoDBUtil.findSortPageCondition(Grade.class, "grade", rw.getQuery(), rw.getPageNo(),  rw.getPageSize(), Sort.Direction.ASC, "created");
+        return new Response(STAUTS_OK, page);
     }
 }

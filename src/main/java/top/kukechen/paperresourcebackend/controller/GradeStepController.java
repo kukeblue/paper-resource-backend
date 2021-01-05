@@ -19,9 +19,11 @@ import top.kukechen.paperresourcebackend.model.GradeStepQuery;
 import top.kukechen.paperresourcebackend.restservice.Response;
 import top.kukechen.paperresourcebackend.restservice.ResponseWrap;
 import top.kukechen.paperresourcebackend.service.MongoDBUtil;
+import top.kukechen.paperresourcebackend.service.PageModel;
 import top.kukechen.paperresourcebackend.units.CommonUtils;
 import top.kukechen.paperresourcebackend.units.PassToken;
 
+import java.util.HashMap;
 import java.util.List;
 
 import static top.kukechen.paperresourcebackend.restservice.Response.STAUTS_FAILED;
@@ -72,5 +74,13 @@ public class GradeStepController {
         update.set("name", gradeStep.getName());
         UpdateResult res = mongoTemplate.updateFirst(query, update, GradeStep.class);
         return new Response(0, res);
+    }
+
+    @PostMapping("/page")
+    @PassToken
+    public Response<GradeStep> getGradeStepPage(@RequestBody ResponseWrap rw) {
+        HashMap query = new HashMap<String, Object>();
+        PageModel page = MongoDBUtil.findSortPageCondition(Grade.class, "gradeStep", rw.getQuery(), rw.getPageNo(),  rw.getPageSize(), Sort.Direction.ASC, "created");
+        return new Response(STAUTS_OK, page);
     }
 }

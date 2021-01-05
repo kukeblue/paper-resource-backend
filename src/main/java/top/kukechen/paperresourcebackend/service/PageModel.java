@@ -10,7 +10,7 @@ import java.util.List;
 @Data
 @ToString
 @NoArgsConstructor
-public class PageModel implements Serializable {
+public class PageModel<T> implements Serializable {
 
     private static final long serialVersionUID = 1L;
     /**
@@ -32,6 +32,6 @@ public class PageModel implements Serializable {
     /**
      * 实体类集合
      */
-    private List<?> list;
+    private List<T> list;
 
 }

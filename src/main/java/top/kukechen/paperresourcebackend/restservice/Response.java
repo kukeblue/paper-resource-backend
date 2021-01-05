@@ -2,6 +2,7 @@ package top.kukechen.paperresourcebackend.restservice;
 
 
 import lombok.Data;
+import top.kukechen.paperresourcebackend.service.PageModel;
 
 import java.util.List;
 
@@ -31,6 +32,11 @@ public final class Response<T> {
         this.list = list;
     }
 
+    public Response(int status, PageModel page) {
+        this.status = status;
+        this.page = page;
+    }
+
     /** 应答状态-成功 */
     public static final int STAUTS_OK = 0;
 
@@ -58,6 +64,8 @@ public final class Response<T> {
     private T result;
 
     private List<T> list;
+
+    private PageModel page;
 
     public int getStatus() {
         return status;

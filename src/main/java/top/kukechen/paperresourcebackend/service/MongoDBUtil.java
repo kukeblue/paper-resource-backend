@@ -400,7 +400,7 @@ public class MongoDBUtil {
             count = mongodbUtil.mongoTemplate.count(new Query(criteria), clazz, collName);
         }
         int pages = (int) Math.ceil((double) count / (double) pageSize);
-        if (pageNo <= 0 || pageNo > pages) {
+        if (pageNo <= 0) {
             pageNo = 1;
         }
         int skip = pageSize * (pageNo - 1);
