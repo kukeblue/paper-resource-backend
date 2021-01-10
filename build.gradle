@@ -30,6 +30,7 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group:'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+	compile 'com.qiniu:qiniu-java-sdk:7.4.+'
 }
 ///**//**/
 test {/**/

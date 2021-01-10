@@ -221,7 +221,7 @@ public class MongoDBUtil {
         Criteria criteria = null;
         criteria = getCriteria(criteria, map);
         if (criteria == null) {
-            return new ArrayList<>();
+            return mongodbUtil.mongoTemplate.findAll(obj, collName);
         }
         Query query = Query.query(criteria).with(Sort.by(direction, sortField));
         return mongodbUtil.mongoTemplate.find(query, obj, collName);
