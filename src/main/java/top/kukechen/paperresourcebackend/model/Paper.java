@@ -10,7 +10,7 @@ import java.util.ArrayList;
 
 @Data
 @Document("paper")
-@EqualsAndHashCode(callSuper=true)
+@EqualsAndHashCode(callSuper = true)
 public class Paper extends BaseModel {
     String id;
     String name;
@@ -18,6 +18,6 @@ public class Paper extends BaseModel {
     EnumFileType fileType;
     String gradeId;
     String gradeStepId;
-    ArrayList previewLinks =  new ArrayList<String>();
+    ArrayList previewLinks = new ArrayList<String>();
     String download;
 }

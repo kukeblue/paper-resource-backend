@@ -13,12 +13,12 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import top.kukechen.paperresourcebackend.model.Grade;
 import top.kukechen.paperresourcebackend.model.Paper;
+import top.kukechen.paperresourcebackend.model.Subject;
 import top.kukechen.paperresourcebackend.restservice.Response;
 import top.kukechen.paperresourcebackend.restservice.ResponseWrap;
 import top.kukechen.paperresourcebackend.service.MongoDBUtil;
 import top.kukechen.paperresourcebackend.units.PassToken;
 
-import javax.security.auth.Subject;
 
 import java.util.List;
 
