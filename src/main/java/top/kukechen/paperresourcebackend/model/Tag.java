@@ -1,23 +1,22 @@
 package top.kukechen.paperresourcebackend.model;
 
-
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;
+import java.util.List;
 
 @Data
-@Document("paper")
+@Document("tag")
 @EqualsAndHashCode(callSuper = true)
-public class Paper extends BaseModel {
-    String id;
+public class Tag extends BaseModel {
     String name;
-    String fileName;
-    EnumFileType fileType;
+    String Id;
+    boolean mainTag;
+    List<Tag> subTags;
     String gradeId;
-    String gradeStepId;
-    ArrayList previewLinks = new ArrayList<String>();
-    String download;
+
+
 }
