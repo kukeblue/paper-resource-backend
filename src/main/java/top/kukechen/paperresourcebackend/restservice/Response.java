@@ -25,6 +25,7 @@ public final class Response<T> {
     public Response(int status, T t, String message) {
         this.status = status;
         this.message = message;
+        this.result = t;
     }
 
     public Response(int status, List<T> list) {
