@@ -3,6 +3,7 @@ package top.kukechen.paperresourcebackend.controller;
 import com.mongodb.client.result.UpdateResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -16,8 +17,10 @@ import top.kukechen.paperresourcebackend.restservice.Response;
 import top.kukechen.paperresourcebackend.restservice.ResponseWrap;
 import top.kukechen.paperresourcebackend.service.MongoDBUtil;
 import top.kukechen.paperresourcebackend.service.PageModel;
+import top.kukechen.paperresourcebackend.units.FileTypeUtils;
 import top.kukechen.paperresourcebackend.units.FileUpload;
 import top.kukechen.paperresourcebackend.units.PassToken;
+import top.kukechen.paperresourcebackend.units.PdfUtils;
 
 import java.io.File;
 import java.util.HashMap;
@@ -33,12 +36,31 @@ public class PaperController {
 
     private static Logger logger = LoggerFactory.getLogger(PaperController.class);
 
+    @Value("${upload.path}")
+    private String uploadPath;
+
+
     @PostMapping("/upload")
-    public Response standardServletMultipartResolver(@RequestParam(name = "file") MultipartFile file) {
+    public Response standardServletMultipartResolver(@RequestParam(name = "files") MultipartFile[] files ) {
+
         logger.info("检测到文件上传，上传启动...");
-        File directory = FileUpload.buildDirectory();
-        FileUpload.upload(file, directory);
-        return new Response(Response.STAUTS_OK, "文件上传成功");
+        String fileType = "";
+        String result = "未检测到内容";
+        for (MultipartFile file:files) {
+            File directory = FileUpload.buildDirectory();
+            File paper = FileUpload.upload(file, directory);
+            if(paper != null) {
+                fileType = FileTypeUtils.getFileTypeByFile(paper);
+            }
+        }
+//        if(fileType == "pdf") {
+//            String text = PdfUtils.getPdfFirstPage(paper);
+//            if(!text.isEmpty()) {
+//                result = text.split("\n")[0];
+//            }
+//        }
+
+        return new Response(result, "上传成功");
     }
 
 

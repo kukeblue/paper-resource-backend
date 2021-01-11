@@ -27,7 +27,10 @@ public final class Response<T> {
         this.message = message;
         this.result = t;
     }
-
+    public Response(T t, String message) {
+        this.status = STAUTS_OK;
+        this.result = t;
+    }
     public Response(int status, List<T> list) {
         this.status = status;
         this.list = list;

@@ -5,20 +5,18 @@ import org.apache.pdfbox.text.PDFTextStripper;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
-import top.kukechen.paperresourcebackend.controller.GradeController;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 
 @Component
-public class PdfReader {
+public class PdfUtils {
 
-    private static Logger logger = LoggerFactory.getLogger(PdfReader.class);
+    private static Logger logger = LoggerFactory.getLogger(PdfUtils.class);
 
-    public static String getFirstPage(String path) {
+    public static String getPdfFirstPage(File file) {
         try {
-            File file = new File(path);
             InputStream is = null;
             PDDocument document = null;
             document = PDDocument.load(file);
@@ -29,13 +27,9 @@ public class PdfReader {
             stripper.setEndPage(1);
             String text = stripper.getText(document);
             return text;
-        }catch (Error error) {
-
-        } catch (IOException e) {
+        }catch (IOException e) {
             logger.error("PDF读取失败");
             e.printStackTrace();
-
-        } finally {
             return "";
         }
     }
