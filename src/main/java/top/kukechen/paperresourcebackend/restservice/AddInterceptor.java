@@ -38,7 +38,7 @@ public class AddInterceptor implements WebMvcConfigurer {
     @Override
     public void addInterceptors(InterceptorRegistry registry) {
         //默认拦截所有路径
-        registry.addInterceptor(authenticationInterceptor()).excludePathPatterns("/user/**","/swagger**/**").addPathPatterns("/**");
+//        registry.addInterceptor(authenticationInterceptor()).excludePathPatterns("/user/**","/swagger**/**").addPathPatterns("/**");
     }
 
     @Bean
