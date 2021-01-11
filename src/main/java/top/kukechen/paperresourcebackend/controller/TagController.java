@@ -3,6 +3,7 @@ package top.kukechen.paperresourcebackend.controller;
 import com.mongodb.client.result.UpdateResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
@@ -13,13 +14,15 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import top.kukechen.paperresourcebackend.model.Grade;
 import top.kukechen.paperresourcebackend.model.Paper;
+import top.kukechen.paperresourcebackend.model.Subject;
 import top.kukechen.paperresourcebackend.model.Tag;
 import top.kukechen.paperresourcebackend.restservice.Response;
 import top.kukechen.paperresourcebackend.restservice.ResponseWrap;
 import top.kukechen.paperresourcebackend.service.MongoDBUtil;
+import top.kukechen.paperresourcebackend.service.PageModel;
 import top.kukechen.paperresourcebackend.units.PassToken;
 
-import javax.security.auth.Subject;
+import java.util.HashMap;
 import java.util.List;
 
 import static top.kukechen.paperresourcebackend.restservice.Response.STAUTS_FAILED;
@@ -45,7 +48,15 @@ public class TagController {
         return new Response(0, tag);
     }
 
-    @PostMapping("/tag")
+    @PostMapping("/page")
+    @PassToken
+    public Response<Grade> getGradePage(@RequestBody ResponseWrap rw) {
+        HashMap query = new HashMap<String, Object>();
+        PageModel page = MongoDBUtil.findSortPageCondition(Tag.class, "tag", rw.getQuery(), rw.getPageNo(), rw.getPageSize(), Sort.Direction.ASC, "created");
+        return new Response(STAUTS_OK, page);
+    }
+
+    @PostMapping("/list")
     @PassToken
     public Response<Grade> getTagList() {
         MongoTemplate mongoTemplate = MongoDBUtil.mongodbUtil.mongoTemplate;
@@ -78,4 +89,5 @@ public class TagController {
         UpdateResult res = mongoTemplate.updateFirst(query, update, Tag.class);
         return new Response(0, res);
     }
+
 }
