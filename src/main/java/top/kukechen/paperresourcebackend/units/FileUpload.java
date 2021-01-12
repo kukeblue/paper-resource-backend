@@ -46,14 +46,16 @@ public class FileUpload {
         return directory;
     }
 
-    public static void  upload(MultipartFile multipartFile, File directory) {
+    public static File upload(MultipartFile multipartFile, File directory) {
         File file = new File(fileUpload.PATH + multipartFile.getOriginalFilename());
         String filename = multipartFile.getOriginalFilename();
         if (file.exists()) {
             filename = System.currentTimeMillis() + filename;
         }
         try {
-            multipartFile.transferTo(new File(directory, filename));
+            File newFile = new File(directory, filename);
+            multipartFile.transferTo(newFile);
+            return newFile;
         } catch (IOException e) {
             throw new RuntimeException(e);
         }

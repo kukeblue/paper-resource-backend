@@ -18,19 +18,17 @@ dependencies {
 	compile group: 'io.jsonwebtoken', name: 'jjwt', version: '0.9.1'
 	compile("org.springframework.boot:spring-boot-devtools")
 	compile group: 'com.auth0', name: 'java-jwt', version: '3.8.3'
-	// https://mvnrepository.com/artifact/org.jasypt/jasypt
 	compile group: 'org.jasypt', name: 'jasypt', version: '1.9.3'
-	// https://mvnrepository.com/artifact/org.projectlombok/lombok
 	compileOnly 'org.projectlombok:lombok:1.18.12'
-	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
 	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.9.2'
-	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger2
 	compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.9.2'
 	annotationProcessor 'org.projectlombok:lombok:1.18.12'
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group:'org.junit.vintage', module: 'junit-vintage-engine'
 	}
 	compile 'com.qiniu:qiniu-java-sdk:7.4.+'
+	compile group: 'org.apache.pdfbox', name: 'pdfbox', version: '2.0.21'
+
 }
 ///**//**/
 test {/**/
