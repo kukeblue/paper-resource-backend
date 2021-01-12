@@ -1,0 +1,49 @@
+2021-01-12 01:11:18.257 [cluster-ClusterId{value='5ffc4a04c76e9d7dc1c38541', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:40, serverValue:236}] to 103.100.210.203:27017
+2021-01-12 03:11:41.695 [cluster-ClusterId{value='5ffc4a04c76e9d7dc1c38541', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:41, serverValue:237}] to 103.100.210.203:27017
+2021-01-12 05:12:01.771 [cluster-ClusterId{value='5ffc4a04c76e9d7dc1c38541', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:42, serverValue:238}] to 103.100.210.203:27017
+2021-01-12 08:00:10.851 [cluster-ClusterId{value='5ffc4a04c76e9d7dc1c38541', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:43, serverValue:241}] to 103.100.210.203:27017
+2021-01-12 08:23:42.342 [cluster-ClusterId{value='5ffc4a04c76e9d7dc1c38541', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server 103.100.210.203:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:127)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.ConnectException: Network is unreachable (connect failed)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:63)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 3 common frames omitted
+2021-01-12 08:26:50.245 [cluster-ClusterId{value='5ffc4a04c76e9d7dc1c38541', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:49, serverValue:243}] to 103.100.210.203:27017
+2021-01-12 08:26:50.284 [cluster-ClusterId{value='5ffc4a04c76e9d7dc1c38541', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=103.100.210.203:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=35849134}
+2021-01-12 08:33:06.867 [cluster-ClusterId{value='5ffc4a04c76e9d7dc1c38541', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Exception in monitor thread while connecting to server 103.100.210.203:27017
+com.mongodb.MongoSocketOpenException: Exception opening socket
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:70)
+	at com.mongodb.internal.connection.InternalStreamConnection.open(InternalStreamConnection.java:127)
+	at com.mongodb.internal.connection.DefaultServerMonitor$ServerMonitorRunnable.run(DefaultServerMonitor.java:131)
+	at java.base/java.lang.Thread.run(Thread.java:834)
+Caused by: java.net.ConnectException: Network is unreachable (connect failed)
+	at java.base/java.net.PlainSocketImpl.socketConnect(Native Method)
+	at java.base/java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:399)
+	at java.base/java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:242)
+	at java.base/java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:224)
+	at java.base/java.net.SocksSocketImpl.connect(SocksSocketImpl.java:403)
+	at java.base/java.net.Socket.connect(Socket.java:609)
+	at com.mongodb.internal.connection.SocketStreamHelper.initialize(SocketStreamHelper.java:63)
+	at com.mongodb.internal.connection.SocketStream.initializeSocket(SocketStream.java:79)
+	at com.mongodb.internal.connection.SocketStream.open(SocketStream.java:65)
+	... 3 common frames omitted
+2021-01-12 09:09:00.780 [cluster-ClusterId{value='5ffc4a04c76e9d7dc1c38541', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:55, serverValue:244}] to 103.100.210.203:27017
+2021-01-12 09:09:00.826 [cluster-ClusterId{value='5ffc4a04c76e9d7dc1c38541', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.cluster - Monitor thread successfully connected to server with description ServerDescription{address=103.100.210.203:27017, type=STANDALONE, state=CONNECTED, ok=true, minWireVersion=0, maxWireVersion=7, maxDocumentSize=16777216, logicalSessionTimeoutMinutes=30, roundTripTimeNanos=45438059}
+2021-01-12 12:39:33.505 [cluster-ClusterId{value='5ffc4a04c76e9d7dc1c38541', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:56, serverValue:245}] to 103.100.210.203:27017
+2021-01-12 12:45:08.299 [cluster-ClusterId{value='5ffc4a04c76e9d7dc1c38541', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:57, serverValue:246}] to 103.100.210.203:27017
+2021-01-12 12:50:51.869 [cluster-ClusterId{value='5ffc4a04c76e9d7dc1c38541', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:58, serverValue:247}] to 103.100.210.203:27017
+2021-01-12 12:56:25.477 [cluster-ClusterId{value='5ffc4a04c76e9d7dc1c38541', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:59, serverValue:248}] to 103.100.210.203:27017
+2021-01-12 13:02:09.132 [cluster-ClusterId{value='5ffc4a04c76e9d7dc1c38541', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:60, serverValue:249}] to 103.100.210.203:27017
+2021-01-12 13:07:42.612 [cluster-ClusterId{value='5ffc4a04c76e9d7dc1c38541', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:61, serverValue:250}] to 103.100.210.203:27017
+2021-01-12 13:33:39.015 [cluster-ClusterId{value='5ffc4a04c76e9d7dc1c38541', description='null'}-103.100.210.203:27017] INFO  org.mongodb.driver.connection - Opened connection [connectionId{localValue:62, serverValue:251}] to 103.100.210.203:27017

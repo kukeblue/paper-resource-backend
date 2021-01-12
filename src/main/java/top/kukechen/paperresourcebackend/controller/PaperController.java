@@ -59,7 +59,6 @@ public class PaperController {
 //                result = text.split("\n")[0];
 //            }
 //        }
-
         return new Response(result, "上传成功");
     }
 
