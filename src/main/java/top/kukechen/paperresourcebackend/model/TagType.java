@@ -10,13 +10,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Data
-@Document("tag")
+@Document("tagType")
 @EqualsAndHashCode(callSuper = true)
-public class Tag extends BaseModel {
-    @Id
-    String Id;
-    String name;
-    String tagTypeId;
-    ArrayList<String> gradeIds;
-    ArrayList<String> subjectIds;
+public class TagType extends BaseModel{
+    private String id;
+    private String name;
 }
