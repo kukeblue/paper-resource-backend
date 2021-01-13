@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import top.kukechen.paperresourcebackend.model.Grade;
 import top.kukechen.paperresourcebackend.model.Paper;
+import top.kukechen.paperresourcebackend.model.Tag;
 import top.kukechen.paperresourcebackend.model.TagType;
 import top.kukechen.paperresourcebackend.restservice.Response;
 import top.kukechen.paperresourcebackend.restservice.ResponseWrap;
@@ -36,12 +37,12 @@ public class TagTypeController {
 
     @PostMapping("/add")
     @PassToken
-    public Response<Paper> addSubject(@RequestBody TagType tagType) {
+    public Response<TagType> addTagType(@RequestBody TagType tagType) {
         MongoTemplate mongoTemplate = MongoDBUtil.mongodbUtil.mongoTemplate;
         Query query = Query.query(Criteria.where("name").is(tagType.getName()));
         TagType _tag = mongoTemplate.findOne(query, TagType.class);
         if (_tag != null) {
-            return new Response<Paper>(STAUTS_FAILED, "标签已存在");
+            return new Response<TagType>(STAUTS_FAILED, "标签已存在");
         }
         mongoTemplate.save(tagType);
         return new Response(0, tagType);
@@ -49,7 +50,7 @@ public class TagTypeController {
 
     @PostMapping("/page")
     @PassToken
-    public Response<Grade> getGradePage(@RequestBody ResponseWrap rw) {
+    public Response<TagType> getTagTypePage(@RequestBody ResponseWrap rw) {
         HashMap query = new HashMap<String, Object>();
         PageModel page = MongoDBUtil.findSortPageCondition(TagType.class, "tagType", rw.getQuery(), rw.getPageNo(), rw.getPageSize(), Sort.Direction.ASC, "created");
         return new Response(STAUTS_OK, page);
@@ -57,15 +58,24 @@ public class TagTypeController {
 
     @PostMapping("/list")
     @PassToken
-    public Response<Grade> getTagList() {
+    public Response<TagType> getTagTypeList() {
         MongoTemplate mongoTemplate = MongoDBUtil.mongodbUtil.mongoTemplate;
         List<TagType> list = mongoTemplate.findAll(TagType.class, "tagType");
         return new Response(STAUTS_OK, list);
     }
 
+    @PostMapping("/tagList")
+    @PassToken
+    public Response<Tag> getTagList(@RequestBody ResponseWrap rw) {
+        String id = rw.getId();
+        MongoTemplate mongoTemplate = MongoDBUtil.mongodbUtil.mongoTemplate;
+        List<Tag> list = mongoTemplate.find(Query.query(Criteria.where("tagTypeId").is(id)), Tag.class, "tag");
+        return new Response(STAUTS_OK, list);
+    }
+
     @PostMapping("/delete")
     @PassToken
-    public Response<TagType> deleteTag(@RequestBody ResponseWrap rw) {
+    public Response<TagType> deleteTagType(@RequestBody ResponseWrap rw) {
         String id = rw.getId();
         logger.info("开始删除标签: " + id);
         int result = MongoDBUtil.removeById(id, "tagType");
@@ -79,7 +89,7 @@ public class TagTypeController {
 
     @PostMapping("/edit")
     @PassToken
-    public Response<Paper> editGrade(@RequestBody TagType tagType) {
+    public Response<Paper> editTagType(@RequestBody TagType tagType) {
         MongoTemplate mongoTemplate = MongoDBUtil.mongodbUtil.mongoTemplate;
         Criteria criteria = Criteria.where("_id").is(tagType.getId());
         Query query = Query.query(criteria);
