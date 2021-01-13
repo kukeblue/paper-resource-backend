@@ -36,7 +36,7 @@ public class TagController {
 
     @PostMapping("/add")
     @PassToken
-    public Response<Paper> addSubject(@RequestBody Tag tag) {
+    public Response<Paper> addTag(@RequestBody Tag tag) {
         MongoTemplate mongoTemplate = MongoDBUtil.mongodbUtil.mongoTemplate;
         Query query = Query.query(Criteria.where("name").is(tag.getName()));
         Tag _tag = mongoTemplate.findOne(query, Tag.class);
@@ -49,7 +49,7 @@ public class TagController {
 
     @PostMapping("/page")
     @PassToken
-    public Response<Grade> getGradePage(@RequestBody ResponseWrap rw) {
+    public Response<Grade> getTag(@RequestBody ResponseWrap rw) {
         HashMap query = new HashMap<String, Object>();
         PageModel page = MongoDBUtil.findSortPageCondition(Tag.class, "tag", rw.getQuery(), rw.getPageNo(), rw.getPageSize(), Sort.Direction.ASC, "created");
         return new Response(STAUTS_OK, page);
@@ -79,7 +79,7 @@ public class TagController {
 
     @PostMapping("/edit")
     @PassToken
-    public Response<Paper> editGrade(@RequestBody Tag tag) {
+    public Response<Paper> editTag(@RequestBody Tag tag) {
         MongoTemplate mongoTemplate = MongoDBUtil.mongodbUtil.mongoTemplate;
         Criteria criteria = Criteria.where("_id").is(tag.getId());
         Query query = Query.query(criteria);
