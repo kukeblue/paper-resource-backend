@@ -23,6 +23,7 @@ import top.kukechen.paperresourcebackend.units.PassToken;
 import top.kukechen.paperresourcebackend.units.PdfUtils;
 
 import java.io.File;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
@@ -44,22 +45,13 @@ public class PaperController {
     public Response standardServletMultipartResolver(@RequestParam(name = "files") MultipartFile[] files ) {
 
         logger.info("检测到文件上传，上传启动...");
-        String fileType = "";
-        String result = "未检测到内容";
+        ArrayList uploadFiles = new ArrayList();
         for (MultipartFile file:files) {
             File directory = FileUpload.buildDirectory();
             File paper = FileUpload.upload(file, directory);
-            if(paper != null) {
-                fileType = FileTypeUtils.getFileTypeByFile(paper);
-            }
+            uploadFiles.add("http://api-paperfile.kukechen.top/demo/" + paper.getName());
         }
-//        if(fileType == "pdf") {
-//            String text = PdfUtils.getPdfFirstPage(paper);
-//            if(!text.isEmpty()) {
-//                result = text.split("\n")[0];
-//            }
-//        }
-        return new Response(result, "上传成功");
+        return new Response(uploadFiles, "上传成功");
     }
 
 
