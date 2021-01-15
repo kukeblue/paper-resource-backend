@@ -15,9 +15,10 @@ public class Paper extends BaseModel {
     String id;
     String name;
     String fileName;
-    EnumFileType fileType;
+    String fileType;
     String gradeId;
     String gradeStepId;
+    ArrayList tagIds = new ArrayList<String>();
     ArrayList previewLinks = new ArrayList<String>();
-    String download;
+    String file;
 }

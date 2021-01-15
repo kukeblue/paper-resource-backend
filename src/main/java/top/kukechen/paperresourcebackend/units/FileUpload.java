@@ -31,6 +31,8 @@ import java.util.Map;
 public class FileUpload {
     public static FileUpload fileUpload;
 
+    public static OkHttpClient client = new OkHttpClient();
+
     public FileUpload() throws IOException {
     }
 
@@ -59,6 +61,21 @@ public class FileUpload {
         try {
             File newFile = new File(directory, filename);
             multipartFile.transferTo(newFile);
+            return newFile;
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public static File uploadPaper(MultipartFile multipartFile, File directory) {
+        File file = new File(fileUpload.PATH + multipartFile.getOriginalFilename());
+        String filename = multipartFile.getOriginalFilename();
+        if (file.exists()) {
+            filename = System.currentTimeMillis() + filename;
+        }
+        try {
+            File newFile = new File(directory, filename);
+            multipartFile.transferTo(newFile);
             uploadPriviewServer(newFile);
             return newFile;
         } catch (IOException e) {
@@ -68,7 +85,6 @@ public class FileUpload {
 
 
     public static void uploadPriviewServer(File file) throws IOException {
-        OkHttpClient client = new OkHttpClient();
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/octet-stream"), file);
         MultipartBody multipartBody = new MultipartBody.Builder()
                 .setType(MultipartBody.FORM)

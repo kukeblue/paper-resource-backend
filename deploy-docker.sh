@@ -1,3 +1,4 @@
+sh build.sh
 ssh root@chome '
   docker container stop paper-resource-backend;
   docker container rm  paper-resource-backend;

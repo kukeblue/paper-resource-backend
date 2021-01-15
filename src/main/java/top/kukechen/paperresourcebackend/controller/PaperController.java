@@ -17,10 +17,7 @@ import top.kukechen.paperresourcebackend.restservice.Response;
 import top.kukechen.paperresourcebackend.restservice.ResponseWrap;
 import top.kukechen.paperresourcebackend.service.MongoDBUtil;
 import top.kukechen.paperresourcebackend.service.PageModel;
-import top.kukechen.paperresourcebackend.units.FileTypeUtils;
-import top.kukechen.paperresourcebackend.units.FileUpload;
-import top.kukechen.paperresourcebackend.units.PassToken;
-import top.kukechen.paperresourcebackend.units.PdfUtils;
+import top.kukechen.paperresourcebackend.units.*;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -48,7 +45,7 @@ public class PaperController {
         ArrayList uploadFiles = new ArrayList();
         for (MultipartFile file:files) {
             File directory = FileUpload.buildDirectory();
-            File paper = FileUpload.upload(file, directory);
+            File paper = FileUpload.uploadPaper(file, directory);
             uploadFiles.add("http://api-paperfile.kukechen.top/demo/" + paper.getName());
         }
         return new Response(uploadFiles, "上传成功");
@@ -101,48 +98,8 @@ public class PaperController {
 
     @PostMapping("/edit")
     @PassToken
-    public Response<Paper> editGrade(@RequestBody Paper paper) {
-        MongoTemplate mongoTemplate = MongoDBUtil.mongodbUtil.mongoTemplate;
-        Criteria criteria = Criteria.where("_id").is(paper.getId());
-        Query query = Query.query(criteria);
-        Update update = new Update();
-        update.set("name", paper.getName());
-        UpdateResult res = mongoTemplate.updateFirst(query, update, Paper.class);
-        return new Response(0, res);
+    public Response<Paper> editGrade(@RequestBody Paper paper) throws IllegalAccessException {
+        MongoDBUtil.updateMulti("_id", paper.getId(), CommonUtils.getObjectToMap(paper), "paper", 1);
+        return new Response(0, "修改成功");
     }
-
-
-//    @PostMapping("/edit")
-//    @PassToken
-//    public Response<Grade> editGrade(@RequestBody Grade grade) {
-//        MongoTemplate mongoTemplate = MongoDBUtil.mongodbUtil.mongoTemplate;
-//        Criteria criteria = Criteria.where("_id").is(grade.getId());
-//        Query query = Query.query(criteria);
-//        Update update = new Update();
-//        update.set("name", grade.getName());
-//        UpdateResult res = mongoTemplate.updateFirst(query, update, Grade.class);
-//        return new Response(0, res);
-//    }
-//
-//    @PostMapping("/list")
-//    @PassToken
-//    public Response<Grade> getGradeList() {
-//        MongoTemplate mongoTemplate = MongoDBUtil.mongodbUtil.mongoTemplate;
-//        List<Grade> list = mongoTemplate.findAll(Grade.class, "grade");
-//        return new Response(STAUTS_OK, list);
-//    }
-//
-//    @PostMapping("/delete")
-//    @PassToken
-//    public Response<Grade> deleteGrade(@RequestBody ResponseWrap rw) {
-//        String id = rw.getId();
-//        logger.info("开始删除年级: " + id);
-//        int result = MongoDBUtil.removeById(id, "grade");
-//        logger.info("删除年级成功: id为" + id + " 删除结果 - result: " + result);
-//        if(result == 1) {
-//            return new Response(STAUTS_OK, "删除成功");
-//        }else {
-//            return new Response(STAUTS_FAILED, "删除失败");
-//        }
-//    }
 }

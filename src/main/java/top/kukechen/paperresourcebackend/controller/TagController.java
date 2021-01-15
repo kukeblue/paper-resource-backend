@@ -19,6 +19,7 @@ import top.kukechen.paperresourcebackend.restservice.Response;
 import top.kukechen.paperresourcebackend.restservice.ResponseWrap;
 import top.kukechen.paperresourcebackend.service.MongoDBUtil;
 import top.kukechen.paperresourcebackend.service.PageModel;
+import top.kukechen.paperresourcebackend.units.CommonUtils;
 import top.kukechen.paperresourcebackend.units.PassToken;
 
 import java.util.HashMap;
@@ -49,7 +50,7 @@ public class TagController {
 
     @PostMapping("/page")
     @PassToken
-    public Response<Grade> getTag(@RequestBody ResponseWrap rw) {
+    public Response<Tag> getTag(@RequestBody ResponseWrap rw) {
         HashMap query = new HashMap<String, Object>();
         PageModel page = MongoDBUtil.findSortPageCondition(Tag.class, "tag", rw.getQuery(), rw.getPageNo(), rw.getPageSize(), Sort.Direction.ASC, "created");
         return new Response(STAUTS_OK, page);
@@ -57,7 +58,7 @@ public class TagController {
 
     @PostMapping("/list")
     @PassToken
-    public Response<Grade> getTagList() {
+    public Response<Tag> getTagList() {
         MongoTemplate mongoTemplate = MongoDBUtil.mongodbUtil.mongoTemplate;
         List<Tag> list = mongoTemplate.findAll(Tag.class, "tag");
         return new Response(STAUTS_OK, list);
@@ -79,14 +80,9 @@ public class TagController {
 
     @PostMapping("/edit")
     @PassToken
-    public Response<Paper> editTag(@RequestBody Tag tag) {
-        MongoTemplate mongoTemplate = MongoDBUtil.mongodbUtil.mongoTemplate;
-        Criteria criteria = Criteria.where("_id").is(tag.getId());
-        Query query = Query.query(criteria);
-        Update update = new Update();
-        update.set("name", tag.getName());
-        UpdateResult res = mongoTemplate.updateFirst(query, update, Tag.class);
-        return new Response(0, res);
+    public Response<Paper> editTag(@RequestBody Tag tag) throws IllegalAccessException {
+        MongoDBUtil.updateMulti("_id", tag.getId(), CommonUtils.getObjectToMap(tag), "tag", 1);
+        return new Response(0, tag);
     }
 
 }

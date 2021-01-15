@@ -14,7 +14,7 @@ import java.util.List;
 @EqualsAndHashCode(callSuper = true)
 public class Tag extends BaseModel {
     @Id
-    String Id;
+    String id;
     String name;
     String tagTypeId;
     ArrayList<String> gradeIds;
