@@ -3,6 +3,10 @@ package top.kukechen.paperresourcebackend.model;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> aa786862b08ee8a3f646d8f527c939000f3d765c
 @Data
 public class GradeStepQuery {
     String id;
