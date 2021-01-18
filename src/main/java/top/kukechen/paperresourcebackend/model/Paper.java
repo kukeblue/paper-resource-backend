@@ -22,5 +22,6 @@ public class Paper extends BaseModel {
     String gradeStepId;
     ArrayList tagIds = new ArrayList<String>();
     ArrayList previewLinks = new ArrayList<String>();
+    ArrayList region = new ArrayList<String>();
     String file;
 }
