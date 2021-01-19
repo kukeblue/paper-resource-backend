@@ -21,14 +21,4 @@ public class GreetingController {
 //        if(!StringUtils.isEmpty(name)) throw new Exception("Error occurred");
         return new Greeting(counter.incrementAndGet(), String.format(template, name));
     }
-
-    @GetMapping("/login")
-    @PassToken
-    public String login(@RequestParam(value = "name", defaultValue = "World") String name) throws Exception {
-        //给分配一个token 然后返回
-        String jwtToken = JwtUtils.createToken("1", "1", "1" );
-//        Customer customer = new Customer("陈4", "焕" );
-//        MongoDBUtil.saveOne("Department", customer);
-        return jwtToken;
-    }
 }

@@ -11,7 +11,6 @@ import top.kukechen.paperresourcebackend.errorHandle.BusinessException;
 @ControllerAdvice
 @ResponseBody
 public class GlobalExceptionHandler {
-
     /**
      * 默认返回HttpStatus.OK, 这里不是必须的，如果返回其他状态码才有必要加上
      * @param e
@@ -27,6 +26,4 @@ public class GlobalExceptionHandler {
         }
         return ThrowableHandler.handle(e);
     }
-
-
 }

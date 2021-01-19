@@ -9,8 +9,12 @@ import top.kukechen.paperresourcebackend.model.ResponseUser;
 import top.kukechen.paperresourcebackend.model.User;
 import top.kukechen.paperresourcebackend.restservice.Response;
 import top.kukechen.paperresourcebackend.service.MongoDBUtil;
+import top.kukechen.paperresourcebackend.units.CommonUtils;
 import top.kukechen.paperresourcebackend.units.JwtUtils;
 import top.kukechen.paperresourcebackend.units.PassToken;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 @RestController
@@ -32,7 +36,7 @@ public class UserController {
 
     @PassToken
     @PostMapping ("/user/login")
-    public Response login( @RequestBody(required = false) User loginUser){
+    public Response login( @RequestBody(required = false) User loginUser) throws IllegalAccessException {
         System.out.println("User:" + loginUser);
         MongoTemplate mongoTemplate = MongoDBUtil.mongodbUtil.mongoTemplate;
         Query query = Query.query(Criteria.where("username").is(loginUser.getUsername()));
@@ -45,7 +49,9 @@ public class UserController {
                 return new Response(Response.STAUTS_FAILED, "密码错误");
             }
             else{
-                String newToken = JwtUtils.createToken(user.getId(), user.getUsername(), user.getUsername());
+                Map userData = new HashMap<String,String>();
+                userData.put("userId", user.getId());
+                String newToken = JwtUtils.getToken(userData);
                 ResponseUser responseUser = new ResponseUser(loginUser.getUsername(),newToken);
                 return new Response(Response.STAUTS_OK,responseUser,"登陆成功");
             }
