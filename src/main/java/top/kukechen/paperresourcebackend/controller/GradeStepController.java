@@ -66,14 +66,9 @@ public class GradeStepController {
 
     @PostMapping("/edit")
     @PassToken
-    public Response<GradeStep> editGradeStep(@RequestBody GradeStep gradeStep) {
-        MongoTemplate mongoTemplate = MongoDBUtil.mongodbUtil.mongoTemplate;
-        Criteria criteria = Criteria.where("_id").is(gradeStep.getId());
-        Query query = Query.query(criteria);
-        Update update = new Update();
-        update.set("name", gradeStep.getName());
-        UpdateResult res = mongoTemplate.updateFirst(query, update, GradeStep.class);
-        return new Response(0, res);
+    public Response<GradeStep> editGradeStep(@RequestBody GradeStep gradeStep) throws IllegalAccessException {
+        MongoDBUtil.updateMulti("_id", gradeStep.getId(), CommonUtils.getObjectToMap(gradeStep), "gradeStep", 1);
+        return new Response(0, "修改成功");
     }
 
     @PostMapping("/page")
