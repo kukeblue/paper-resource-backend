@@ -23,7 +23,7 @@ public class JwtAuthenticationInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object object) throws Exception {
         // 从请求头中取出 token  这里需要和前端约定好把jwt放到请求头一个叫token的地方
-        String token = httpServletRequest.getHeader("token");
+        String token = httpServletRequest.getHeader("auth");
         // 如果不是映射到方法直接通过
         if (!(object instanceof HandlerMethod)) {
             return true;
@@ -53,20 +53,15 @@ public class JwtAuthenticationInterceptor implements HandlerInterceptor {
 //                //这个错误也是我自定义的
 //                throw new UserNotExist();
 //            }
-
             // 验证 token
             JwtUtils.verifyToken(token, userId);
-
             // 获取载荷内容
             String userName = JwtUtils.getClaimByName(token, "userName").asString();
             String realName = JwtUtils.getClaimByName(token, "realName").asString();
-
             // 放入attribute以便后面调用
 //            request.setAttribute("userName", userName);
 //            request.setAttribute("realName", realName);
-
             return true;
-
         }
         return true;
     }

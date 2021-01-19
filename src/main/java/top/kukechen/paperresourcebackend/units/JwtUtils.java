@@ -8,8 +8,10 @@ import com.auth0.jwt.interfaces.Claim;
 import com.auth0.jwt.interfaces.DecodedJWT;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 /**
  * @author Lehr
@@ -49,6 +51,7 @@ public class JwtUtils {
             JWTVerifier verifier = JWT.require(Algorithm.HMAC256(secret+"HelloLehr")).build();
             jwt = verifier.verify(token);
         } catch (Exception e) {
+            System.out.println(e.getMessage());
             //效验失败
             //这里抛出的异常是我自定义的一个异常，你也可以写成别的
             throw new Error("Jwt error");
@@ -61,10 +64,11 @@ public class JwtUtils {
     public static String getAudience(String token) throws Error {
         String audience = null;
         try {
-            audience = JWT.decode(token).getAudience().get(0);
+            List<String> ST = JWT.decode(token).getAudience();
         } catch (JWTDecodeException j) {
             //这里是token解析失败
-            throw new Error("Jwt error");
+            System.out.println(j);
+            throw new Error(j);
         }
         return audience;
     }

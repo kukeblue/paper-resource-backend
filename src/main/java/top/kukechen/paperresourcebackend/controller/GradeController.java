@@ -35,7 +35,6 @@ public class GradeController {
     private static Logger logger = LoggerFactory.getLogger(GradeController.class);
 
     @PostMapping("/add")
-    @PassToken
     public Response<Grade> addGrade(@RequestBody Grade grade) {
         MongoTemplate mongoTemplate = MongoDBUtil.mongodbUtil.mongoTemplate;
         Query query = Query.query(Criteria.where("name").is(grade.getName()));
@@ -47,7 +46,6 @@ public class GradeController {
         return new Response(0, grade);
     }
     @PostMapping("/edit")
-    @PassToken
     public Response<Grade> editGrade(@RequestBody Grade grade) {
         MongoTemplate mongoTemplate = MongoDBUtil.mongodbUtil.mongoTemplate;
         Criteria criteria = Criteria.where("_id").is(grade.getId());
@@ -59,7 +57,6 @@ public class GradeController {
     }
 
     @PostMapping("/list")
-    @PassToken
     public Response<Grade> getGradeList() {
         MongoTemplate mongoTemplate = MongoDBUtil.mongodbUtil.mongoTemplate;
         List<Grade> list = mongoTemplate.findAll(Grade.class, "grade");
@@ -67,7 +64,6 @@ public class GradeController {
     }
 
     @PostMapping("/delete")
-    @PassToken
     public Response<Grade> deleteGrade(@RequestBody ResponseWrap rw) {
         String id = rw.getId();
         logger.info("开始删除年级: " + id);
@@ -81,7 +77,6 @@ public class GradeController {
     }
 
     @PostMapping("/page")
-    @PassToken
     public Response<Grade> getGradePage(@RequestBody ResponseWrap rw) {
         HashMap query = new HashMap<String, Object>();
         PageModel page = MongoDBUtil.findSortPageCondition(Grade.class, "grade", rw.getQuery(), rw.getPageNo(),  rw.getPageSize(), Sort.Direction.ASC, "created");
