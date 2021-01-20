@@ -26,6 +26,9 @@ dependencies {
 	testImplementation('org.springframework.boot:spring-boot-starter-test') {
 		exclude group:'org.junit.vintage', module: 'junit-vintage-engine'
 	}
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-devtools
+	compile group: 'org.springframework.boot', name: 'spring-boot-devtools', version: '2.3.4.RELEASE'
+
 	compile 'com.qiniu:qiniu-java-sdk:7.4.+'
 	compile group: 'org.apache.pdfbox', name: 'pdfbox', version: '2.0.21'
 	implementation 'com.squareup.okhttp3:okhttp:3.10.0'
