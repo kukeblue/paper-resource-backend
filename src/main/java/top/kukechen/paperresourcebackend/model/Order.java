@@ -5,16 +5,13 @@ import lombok.EqualsAndHashCode;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-
 @Data
-@EqualsAndHashCode(callSuper=true)
-@Document("gradeStep")
-public class GradeStep extends BaseModel {
+@Document("order")
+@EqualsAndHashCode(callSuper = true)
+public class Order extends BaseModel {
     @Id
     String id;
-    String gradeId;
-    String name;
-    String alias;
+    String userId;
+    String orderName;
+    double amount;
 }
-
-

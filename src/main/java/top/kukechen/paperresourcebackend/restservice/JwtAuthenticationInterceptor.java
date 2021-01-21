@@ -40,7 +40,7 @@ public class JwtAuthenticationInterceptor implements HandlerInterceptor {
             if (token == null) {
                 throw new NeedToLogin();
             }
-            DecodedJWT decodedJWT = JwtUtils.verifyToken(token);
+                DecodedJWT decodedJWT = JwtUtils.verifyToken(token);
 //            String userId = decodedJWT.getClaim("userId").asString();
             return true;
         }

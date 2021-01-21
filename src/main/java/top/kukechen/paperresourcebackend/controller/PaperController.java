@@ -126,7 +126,7 @@ public class PaperController {
 
     @PostMapping("/page")
     @PassToken
-    public Response<Grade> getGradePage(@RequestBody ResponseWrap rw) {
+    public Response<Grade> getPaperPage(@RequestBody ResponseWrap rw) {
         HashMap query = new HashMap<String, Object>();
         PageModel page = MongoDBUtil.findSortPageCondition(Paper.class, "paper", rw.getQuery(), rw.getPageNo(), rw.getPageSize(), Sort.Direction.ASC, "created");
         return new Response(STAUTS_OK, page);
