@@ -29,7 +29,6 @@ import java.util.List;
 import static top.kukechen.paperresourcebackend.restservice.Response.STAUTS_FAILED;
 import static top.kukechen.paperresourcebackend.restservice.Response.STAUTS_OK;
 
-@PassToken
 @RestController
 @RequestMapping("/paper")
 public class PaperController {
@@ -41,8 +40,7 @@ public class PaperController {
 
 
     @PostMapping("/upload")
-    public Response standardServletMultipartResolver(@RequestParam(name = "files") MultipartFile[] files ) {
-
+    public Response upload(@RequestParam(name = "files") MultipartFile[] files ) {
         logger.info("检测到文件上传，上传启动...");
         ArrayList uploadFiles = new ArrayList();
         for (MultipartFile file:files) {
@@ -53,6 +51,17 @@ public class PaperController {
         return new Response(uploadFiles, "上传成功");
     }
 
+    @PostMapping("/smart_upload")
+    public Response smartUpload (@RequestParam(name = "files") MultipartFile[] files ) {
+        logger.info("检测到文件上传，上传启动...");
+        ArrayList uploadFiles = new ArrayList();
+        for (MultipartFile file:files) {
+            File directory = FileUpload.buildDirectory();
+            File paper = FileUpload.uploadPaper(file, directory);
+            uploadFiles.add("http://api-paperfile.kukechen.top/demo/" + paper.getName());
+        }
+        return new Response(uploadFiles, "上传成功");
+    }
 
     @PostMapping("/add")
     @PassToken

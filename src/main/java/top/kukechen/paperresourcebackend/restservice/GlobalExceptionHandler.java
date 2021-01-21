@@ -6,23 +6,19 @@ import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import top.kukechen.paperresourcebackend.errorHandle.BusinessException;
+import top.kukechen.paperresourcebackend.errorHandle.NeedToLogin;
 
 
 @ControllerAdvice
 @ResponseBody
 public class GlobalExceptionHandler {
-    /**
-     * 默认返回HttpStatus.OK, 这里不是必须的，如果返回其他状态码才有必要加上
-     * @param e
-     * @return 封装后的应答对象
-     */
-    @ResponseStatus(HttpStatus.OK)
+
+    @ResponseStatus(HttpStatus.UNAUTHORIZED)
     @ExceptionHandler({Throwable.class})
-    public Response handle(Throwable e) {
+    public Response handleLogin(Throwable e) {
         e.printStackTrace();
-        if(e instanceof BusinessException) {
-            System.out.println("业务异常："+e.getMessage());
-//            BusinessException businessException = (BusinessException)e;
+        if(e instanceof NeedToLogin) {
+            System.out.println("登录过期："+e.getMessage());
         }
         return ThrowableHandler.handle(e);
     }
