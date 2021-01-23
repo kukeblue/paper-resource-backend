@@ -8,8 +8,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import top.kukechen.paperresourcebackend.restservice.Greeting;
 import top.kukechen.paperresourcebackend.service.FileAnalysis;
-import top.kukechen.paperresourcebackend.units.JwtUtils;
-import top.kukechen.paperresourcebackend.units.PassToken;
+import top.kukechen.paperresourcebackend.utils.PassToken;
 
 
 @RestController

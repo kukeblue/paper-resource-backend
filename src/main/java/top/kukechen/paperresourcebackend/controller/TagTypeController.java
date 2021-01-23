@@ -12,7 +12,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import top.kukechen.paperresourcebackend.model.Grade;
 import top.kukechen.paperresourcebackend.model.Paper;
 import top.kukechen.paperresourcebackend.model.Tag;
 import top.kukechen.paperresourcebackend.model.TagType;
@@ -20,7 +19,7 @@ import top.kukechen.paperresourcebackend.restservice.Response;
 import top.kukechen.paperresourcebackend.restservice.ResponseWrap;
 import top.kukechen.paperresourcebackend.service.MongoDBUtil;
 import top.kukechen.paperresourcebackend.service.PageModel;
-import top.kukechen.paperresourcebackend.units.PassToken;
+import top.kukechen.paperresourcebackend.utils.PassToken;
 
 import java.util.HashMap;
 import java.util.List;

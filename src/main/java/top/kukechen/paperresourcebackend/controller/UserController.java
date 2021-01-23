@@ -9,9 +9,8 @@ import top.kukechen.paperresourcebackend.model.ResponseUser;
 import top.kukechen.paperresourcebackend.model.User;
 import top.kukechen.paperresourcebackend.restservice.Response;
 import top.kukechen.paperresourcebackend.service.MongoDBUtil;
-import top.kukechen.paperresourcebackend.units.CommonUtils;
-import top.kukechen.paperresourcebackend.units.JwtUtils;
-import top.kukechen.paperresourcebackend.units.PassToken;
+import top.kukechen.paperresourcebackend.utils.JwtUtils;
+import top.kukechen.paperresourcebackend.utils.PassToken;
 
 import java.util.HashMap;
 import java.util.Map;

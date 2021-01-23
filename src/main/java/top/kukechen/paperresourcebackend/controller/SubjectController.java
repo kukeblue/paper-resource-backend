@@ -19,7 +19,7 @@ import top.kukechen.paperresourcebackend.restservice.Response;
 import top.kukechen.paperresourcebackend.restservice.ResponseWrap;
 import top.kukechen.paperresourcebackend.service.MongoDBUtil;
 import top.kukechen.paperresourcebackend.service.PageModel;
-import top.kukechen.paperresourcebackend.units.PassToken;
+import top.kukechen.paperresourcebackend.utils.PassToken;
 
 
 import java.util.HashMap;

@@ -6,10 +6,9 @@ import org.slf4j.LoggerFactory;
 import org.springframework.web.method.HandlerMethod;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
-import top.kukechen.paperresourcebackend.controller.GradeController;
 import top.kukechen.paperresourcebackend.errorHandle.NeedToLogin;
-import top.kukechen.paperresourcebackend.units.JwtUtils;
-import top.kukechen.paperresourcebackend.units.PassToken;
+import top.kukechen.paperresourcebackend.utils.JwtUtils;
+import top.kukechen.paperresourcebackend.utils.PassToken;
 
 
 import javax.servlet.http.HttpServletRequest;

@@ -1,4 +1,4 @@
-package top.kukechen.paperresourcebackend.units;
+package top.kukechen.paperresourcebackend.utils;
 
 import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;

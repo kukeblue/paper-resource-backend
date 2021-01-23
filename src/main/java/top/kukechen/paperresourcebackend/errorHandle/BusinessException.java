@@ -1,6 +1,6 @@
 package top.kukechen.paperresourcebackend.errorHandle;
 
-import top.kukechen.paperresourcebackend.units.ResultEnum;
+import top.kukechen.paperresourcebackend.utils.ResultEnum;
 
 public class BusinessException extends RuntimeException {
     private static final long serialVersionUID = 1L;

@@ -1,4 +1,4 @@
-package top.kukechen.paperresourcebackend.units;
+package top.kukechen.paperresourcebackend.utils;
 
 public enum ResultEnum {
     UNKONW_ERROR(-1,"未知错误"),
