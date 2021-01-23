@@ -18,6 +18,7 @@ public class Paper extends BaseModel {
     String fileType;
     String gradeId;
     String subjectId;
+    String term;
     double price;
     String gradeStepId;
     ArrayList tagIds = new ArrayList<String>();

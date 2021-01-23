@@ -1,7 +1,6 @@
 package top.kukechen.paperresourcebackend.controller;
 
 
-import com.mongodb.client.result.DeleteResult;
 import com.mongodb.client.result.UpdateResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -12,18 +11,13 @@ import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.web.bind.annotation.*;
 import top.kukechen.paperresourcebackend.model.Grade;
-import top.kukechen.paperresourcebackend.model.Paper;
-import top.kukechen.paperresourcebackend.model.User;
-import top.kukechen.paperresourcebackend.restservice.Greeting;
 import top.kukechen.paperresourcebackend.restservice.Response;
 import top.kukechen.paperresourcebackend.restservice.ResponseWrap;
 import top.kukechen.paperresourcebackend.service.MongoDBUtil;
 import top.kukechen.paperresourcebackend.service.PageModel;
-import top.kukechen.paperresourcebackend.units.PassToken;
 
 import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import static top.kukechen.paperresourcebackend.restservice.Response.STAUTS_FAILED;
 import static top.kukechen.paperresourcebackend.restservice.Response.STAUTS_OK;

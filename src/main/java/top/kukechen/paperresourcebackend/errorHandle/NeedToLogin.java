@@ -1,8 +1,8 @@
 package top.kukechen.paperresourcebackend.errorHandle;
 
-import top.kukechen.paperresourcebackend.units.ResultEnum;
+import top.kukechen.paperresourcebackend.utils.ResultEnum;
 
-import static top.kukechen.paperresourcebackend.units.ResultEnum.NO_LOGIN;
+import static top.kukechen.paperresourcebackend.utils.ResultEnum.NO_LOGIN;
 
 public class NeedToLogin  extends RuntimeException {
     private static final long serialVersionUID = 1L;

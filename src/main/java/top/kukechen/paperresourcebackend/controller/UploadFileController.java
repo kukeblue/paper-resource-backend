@@ -6,13 +6,12 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.multipart.MultipartFile;
-import top.kukechen.paperresourcebackend.model.Paper;
 import top.kukechen.paperresourcebackend.qiniu.UploadFile;
 import top.kukechen.paperresourcebackend.qiniu.UploadFileQiniu;
 import top.kukechen.paperresourcebackend.qiniu.UploadProperties;
 import top.kukechen.paperresourcebackend.restservice.Response;
-import top.kukechen.paperresourcebackend.units.FileTypeUtils;
-import top.kukechen.paperresourcebackend.units.PassToken;
+import top.kukechen.paperresourcebackend.utils.FileTypeUtils;
+import top.kukechen.paperresourcebackend.utils.PassToken;
 
 import java.io.File;
 import java.io.IOException;

@@ -1,29 +1,21 @@
 package top.kukechen.paperresourcebackend.controller;
 
-import com.mongodb.client.result.UpdateResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.BeanUtils;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
-import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.web.bind.annotation.*;
-import org.springframework.web.multipart.MultipartFile;
 import top.kukechen.paperresourcebackend.model.Grade;
 import top.kukechen.paperresourcebackend.model.Order;
 import top.kukechen.paperresourcebackend.model.Paper;
-import top.kukechen.paperresourcebackend.model.PapersReq;
 import top.kukechen.paperresourcebackend.restservice.Response;
 import top.kukechen.paperresourcebackend.restservice.ResponseWrap;
 import top.kukechen.paperresourcebackend.service.MongoDBUtil;
 import top.kukechen.paperresourcebackend.service.PageModel;
-import top.kukechen.paperresourcebackend.units.*;
+import top.kukechen.paperresourcebackend.utils.*;
 
-import java.io.File;
-import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 
