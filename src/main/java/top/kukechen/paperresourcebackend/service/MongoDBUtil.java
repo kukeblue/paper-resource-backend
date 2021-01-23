@@ -228,6 +228,25 @@ public class MongoDBUtil {
         return mongodbUtil.mongoTemplate.find(query, obj, collName);
     }
 
+    /**
+     * 根据指定条件查询 并排序
+     *
+     * @param obj      数据对象
+     * @param map      Map<"查询条件key"，查询条件值> map
+     * @return
+     */
+    public static Object findOneByParam(Class<?> obj, Map<String, Object> map) {
+        for (String key : map.keySet()) {
+            Assert.notNull(key, "查询条件key不能为null");
+        }
+        Criteria criteria = null;
+        criteria = getCriteria(criteria, map);
+        if (criteria == null) {
+            return null;
+        }
+        Query query = Query.query(criteria);
+        return mongodbUtil.mongoTemplate.findOne(query, obj);
+    }
 
     /**
      * 范围查询

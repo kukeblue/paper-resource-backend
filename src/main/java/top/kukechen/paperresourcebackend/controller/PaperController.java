@@ -4,6 +4,7 @@ import com.mongodb.client.result.UpdateResult;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.BeanUtils;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.mongodb.core.MongoTemplate;
@@ -13,10 +14,12 @@ import org.springframework.data.mongodb.core.query.Update;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import top.kukechen.paperresourcebackend.model.Grade;
+import top.kukechen.paperresourcebackend.model.GradeStep;
 import top.kukechen.paperresourcebackend.model.Paper;
 import top.kukechen.paperresourcebackend.model.PapersReq;
 import top.kukechen.paperresourcebackend.restservice.Response;
 import top.kukechen.paperresourcebackend.restservice.ResponseWrap;
+import top.kukechen.paperresourcebackend.service.FileAnalysis;
 import top.kukechen.paperresourcebackend.service.MongoDBUtil;
 import top.kukechen.paperresourcebackend.service.PageModel;
 import top.kukechen.paperresourcebackend.units.*;
@@ -38,6 +41,8 @@ public class PaperController {
     @Value("${upload.path}")
     private String uploadPath;
 
+    @Autowired
+    FileAnalysis fileAnalysis;
 
     @PostMapping("/upload")
     public Response upload(@RequestParam(name = "files") MultipartFile[] files ) {
@@ -53,14 +58,35 @@ public class PaperController {
 
     @PostMapping("/smart_upload")
     public Response smartUpload (@RequestParam(name = "files") MultipartFile[] files ) {
-        logger.info("检测到文件上传，上传启动...");
-        ArrayList uploadFiles = new ArrayList();
-        for (MultipartFile file:files) {
+        logger.info("启动文件智能上传......");
+        Paper paper = new Paper();
+        MongoTemplate mongoTemplate = MongoDBUtil.mongodbUtil.mongoTemplate;
+        for (MultipartFile file : files) {
+            Query query = Query.query(Criteria.where("name").is(file.getOriginalFilename()));
+            Paper _paper = mongoTemplate.findOne(query, Paper.class);
+            if (_paper != null) {
+                break;
+            }
             File directory = FileUpload.buildDirectory();
-            File paper = FileUpload.uploadPaper(file, directory);
-            uploadFiles.add("http://api-paperfile.kukechen.top/demo/" + paper.getName());
+            File paperFile = FileUpload.uploadPaper(file, directory);
+            String fileUrl = "http://api-paperfile.kukechen.top/demo/" + paperFile.getName();
+
+            String fileName = file.getOriginalFilename();
+            String[] splitName = fileName.split("\\.");
+            String name = splitName[0];
+            String fileType = splitName[1];
+            paper.setFile(fileUrl);
+            paper.setName(name);
+            paper.setFileType(fileType);
+            // 设置年级
+            GradeStep gradeStep = fileAnalysis.analysisGradeStep(name);
+            if(gradeStep != null) {
+                paper.setGradeStepId(gradeStep.getId());
+                paper.setGradeId(gradeStep.getGradeId());
+            }
+            mongoTemplate.save(paper);
         }
-        return new Response(uploadFiles, "上传成功");
+        return new Response(paper, "上传成功");
     }
 
     @PostMapping("/add")

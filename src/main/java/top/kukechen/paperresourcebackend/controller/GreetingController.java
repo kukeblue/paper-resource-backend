@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
+import top.kukechen.paperresourcebackend.model.GradeStep;
 import top.kukechen.paperresourcebackend.restservice.Greeting;
 import top.kukechen.paperresourcebackend.service.FileAnalysis;
 import top.kukechen.paperresourcebackend.units.JwtUtils;
@@ -25,8 +26,7 @@ public class GreetingController {
     @GetMapping("/greeting")
     @PassToken
     public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) throws Exception {
-//        if(!StringUtils.isEmpty(name)) throw new Exception("Error occurred");
-        fileAnalysis.analysis(name);
-        return new Greeting(counter.incrementAndGet(), String.format(template, name));
+        GradeStep gradeStep = fileAnalysis.analysisGradeStep(name);
+        return new Greeting(counter.incrementAndGet(), String.format(template, gradeStep.getName()));
     }
 }
