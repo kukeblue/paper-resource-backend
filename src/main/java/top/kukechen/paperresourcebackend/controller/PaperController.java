@@ -11,10 +11,7 @@ import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import top.kukechen.paperresourcebackend.model.Grade;
-import top.kukechen.paperresourcebackend.model.GradeStep;
-import top.kukechen.paperresourcebackend.model.Paper;
-import top.kukechen.paperresourcebackend.model.PapersReq;
+import top.kukechen.paperresourcebackend.model.*;
 import top.kukechen.paperresourcebackend.restservice.Response;
 import top.kukechen.paperresourcebackend.restservice.ResponseWrap;
 import top.kukechen.paperresourcebackend.service.FileAnalysis;
@@ -76,19 +73,13 @@ public class PaperController {
             paper.setFile(fileUrl);
             paper.setName(name);
             paper.setFileType(fileType);
-            // 设置年级
-            GradeStep gradeStep = fileAnalysis.analysisGradeStep(name);
-            if(gradeStep != null) {
-                paper.setGradeStepId(gradeStep.getId());
-                paper.setGradeId(gradeStep.getGradeId());
-            }
+            fileAnalysis.analysis(paper);
             mongoTemplate.save(paper);
         }
         return new Response(paper, "上传成功");
     }
 
     @PostMapping("/add")
-    @PassToken
     public Response<Paper> addPaper(@RequestBody Paper paper) {
         MongoTemplate mongoTemplate = MongoDBUtil.mongodbUtil.mongoTemplate;
         Query query = Query.query(Criteria.where("name").is(paper.getName()));
@@ -101,7 +92,6 @@ public class PaperController {
     }
 
     @PostMapping("/add_multiple")
-    @PassToken
     public Response<Paper> addPaperMultiple(@RequestBody PapersReq papersReq) {
         ArrayList<String> fileList = papersReq.getFileList();
         MongoTemplate mongoTemplate = MongoDBUtil.mongodbUtil.mongoTemplate;
@@ -126,7 +116,6 @@ public class PaperController {
     }
 
     @PostMapping("/list")
-    @PassToken
     public Response<Grade> getPaperList() {
         MongoTemplate mongoTemplate = MongoDBUtil.mongodbUtil.mongoTemplate;
         List<Paper> list = mongoTemplate.findAll(Paper.class, "paper");
@@ -134,7 +123,6 @@ public class PaperController {
     }
 
     @PostMapping("/delete")
-    @PassToken
     public Response<Grade> deletePaper(@RequestBody ResponseWrap rw) {
         String id = rw.getId();
         logger.info("开始删除试卷: " + id);
@@ -149,7 +137,6 @@ public class PaperController {
 
 
     @PostMapping("/page")
-    @PassToken
     public Response<Grade> getPaperPage(@RequestBody ResponseWrap rw) {
         HashMap query = new HashMap<String, Object>();
         PageModel page = MongoDBUtil.findSortPageCondition(Paper.class, "paper", rw.getQuery(), rw.getPageNo(), rw.getPageSize(), Sort.Direction.ASC, "created");
@@ -157,7 +144,6 @@ public class PaperController {
     }
 
     @PostMapping("/edit")
-    @PassToken
     public Response<Paper> editGrade(@RequestBody Paper paper) throws IllegalAccessException {
         MongoDBUtil.updateMulti("_id", paper.getId(), CommonUtils.getObjectToMap(paper), "paper", 1);
         return new Response(0, "修改成功");

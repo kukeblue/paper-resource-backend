@@ -25,7 +25,6 @@ public class GreetingController {
     @GetMapping("/greeting")
     @PassToken
     public Greeting greeting(@RequestParam(value = "name", defaultValue = "World") String name) throws Exception {
-        GradeStep gradeStep = fileAnalysis.analysisGradeStep(name);
-        return new Greeting(counter.incrementAndGet(), String.format(template, gradeStep.getName()));
+        return new Greeting(counter.incrementAndGet(), String.format(template, "获取"));
     }
 }

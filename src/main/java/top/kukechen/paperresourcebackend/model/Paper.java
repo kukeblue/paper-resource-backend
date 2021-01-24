@@ -21,6 +21,7 @@ public class Paper extends BaseModel {
     String term;
     double price;
     String gradeStepId;
+    String year;
     ArrayList tagIds = new ArrayList<String>();
     ArrayList previewLinks = new ArrayList<String>();
     ArrayList region = new ArrayList<String>();
