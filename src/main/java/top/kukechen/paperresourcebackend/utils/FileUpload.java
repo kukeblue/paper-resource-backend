@@ -14,7 +14,6 @@ import java.io.IOException;
 public class FileUpload {
     public static FileUpload fileUpload;
 
-    public static OkHttpClient client = new OkHttpClient();
 
     public FileUpload() throws IOException {
     }
@@ -68,6 +67,7 @@ public class FileUpload {
 
 
     public static void uploadPriviewServer(File file) throws IOException {
+       OkHttpClient client = new OkHttpClient();
         RequestBody requestBody = RequestBody.create(MediaType.parse("application/octet-stream"), file);
         MultipartBody multipartBody = new MultipartBody.Builder()
                 .setType(MultipartBody.FORM)

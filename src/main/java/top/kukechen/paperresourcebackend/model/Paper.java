@@ -12,6 +12,7 @@ import java.util.ArrayList;
 @Document("paper")
 @EqualsAndHashCode(callSuper = true)
 public class Paper extends BaseModel {
+    long size;
     String id;
     String name;
     String fileName;

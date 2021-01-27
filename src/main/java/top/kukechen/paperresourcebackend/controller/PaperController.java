@@ -57,7 +57,11 @@ public class PaperController {
         Paper paper = new Paper();
         MongoTemplate mongoTemplate = MongoDBUtil.mongodbUtil.mongoTemplate;
         for (MultipartFile file : files) {
-            Query query = Query.query(Criteria.where("name").is(file.getOriginalFilename()));
+            String fileName = file.getOriginalFilename();
+            String[] splitName = fileName.split("\\.");
+            String name = splitName[0];
+            String fileType = splitName[1];
+            Query query = Query.query(Criteria.where("name").is(name));
             Paper _paper = mongoTemplate.findOne(query, Paper.class);
             if (_paper != null) {
                 break;
@@ -66,11 +70,9 @@ public class PaperController {
             File paperFile = FileUpload.uploadPaper(file, directory);
             String fileUrl = "http://api-paperfile.kukechen.top/demo/" + paperFile.getName();
 
-            String fileName = file.getOriginalFilename();
-            String[] splitName = fileName.split("\\.");
-            String name = splitName[0];
-            String fileType = splitName[1];
+
             paper.setFile(fileUrl);
+            paper.setSize(file.getSize());
             paper.setName(name);
             paper.setFileType(fileType);
             fileAnalysis.analysis(paper);
@@ -139,7 +141,7 @@ public class PaperController {
     @PostMapping("/page")
     public Response<Grade> getPaperPage(@RequestBody ResponseWrap rw) {
         HashMap query = new HashMap<String, Object>();
-        PageModel page = MongoDBUtil.findSortPageCondition(Paper.class, "paper", rw.getQuery(), rw.getPageNo(), rw.getPageSize(), Sort.Direction.ASC, "created");
+        PageModel page = MongoDBUtil.findSortPageCondition(Paper.class, "paper", rw.getQuery(), rw.getPageNo(), rw.getPageSize(), Sort.Direction.DESC, "created");
         return new Response(STAUTS_OK, page);
     }
 

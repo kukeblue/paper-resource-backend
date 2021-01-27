@@ -49,9 +49,12 @@ public class FileAnalysis {
     }
     // 分析科目
     public void analysisSubject(Paper paper) {
+
+
+
         String s = paper.getName();
         Subject subject = null;
-        String regex = "(语文|数学|英语)";
+        String regex = "(语文|数学|英语|物理|生物|政治|历史|地理|四六级)";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(s);
         if(matcher.find()){
@@ -73,7 +76,6 @@ public class FileAnalysis {
     // 分析学年
     public void analysisTerm(Paper paper) {
         String s = paper.getName();
-        Subject subject = null;
         String regex = "(上学期|下学期|上册|下册|上|下)";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(s);
@@ -84,9 +86,6 @@ public class FileAnalysis {
             }else {
                 paper.setTerm("DOWN");
             }
-        }
-        if(subject != null) {
-            paper.setSubjectId(subject.getId());
         }
     }
     // 分析地域
@@ -125,12 +124,13 @@ public class FileAnalysis {
     public static void analysisYear(Paper paper){
         String str = paper.getName();
         String year = "";
-        String reg = "\\D[1-4]\\d{3}\\D";
+        String reg = "(\\d{4})";
         Pattern p = Pattern.compile(reg);
         Matcher matcher = p.matcher(str);
-        while(matcher.find()){
-            year = year + matcher.group(0).substring(1,5) + " ";
+        while (matcher.find()){
+            year = year + matcher.group(0) + "-";
         }
-        paper.setYear(year.trim());
+        year = year.substring(0, year.length() - 1);
+        paper.setYear(year);
     }
 }
