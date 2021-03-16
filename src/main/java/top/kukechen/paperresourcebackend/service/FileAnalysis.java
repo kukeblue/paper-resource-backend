@@ -49,9 +49,6 @@ public class FileAnalysis {
     }
     // 分析科目
     public void analysisSubject(Paper paper) {
-
-
-
         String s = paper.getName();
         Subject subject = null;
         String regex = "(语文|数学|英语|物理|生物|政治|历史|地理|四六级)";
@@ -129,6 +126,9 @@ public class FileAnalysis {
         Matcher matcher = p.matcher(str);
         while (matcher.find()){
             year = year + matcher.group(0) + "-";
+        }
+        if( year.length() == 0) {
+            return;
         }
         year = year.substring(0, year.length() - 1);
         paper.setYear(year);

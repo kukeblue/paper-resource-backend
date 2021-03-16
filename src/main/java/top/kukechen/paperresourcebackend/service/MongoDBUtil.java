@@ -409,11 +409,69 @@ public class MongoDBUtil {
      * @param sortField 排序字段
      * @return
      */
-    public static PageModel findSortPageCondition(Class<?> clazz, String collName, Map<String, Object> map,
-                                                  int pageNo, int pageSize, Sort.Direction direction, String sortField) {
+    public static PageModel findSortPageCondition(Class<?> clazz,
+                              String collName,
+                              Map<String, Object> map,
+                              int pageNo,
+                              int pageSize,
+                              Sort.Direction direction,
+                              String sortField,
+                              String keyword
+    ) {
 
         Criteria criteria = getCriteria(new Criteria(), map);
+        long count;
 
+        if (criteria == null) {
+            count = mongodbUtil.mongoTemplate.count(new Query(), clazz, collName);
+        } else {
+            if(!keyword.isEmpty()) {
+                criteria.and("name").regex(keyword);
+            }
+            count = mongodbUtil.mongoTemplate.count(new Query(criteria), clazz, collName);
+        }
+        int pages = (int) Math.ceil((double) count / (double) pageSize);
+        if (pageNo <= 0) {
+            pageNo = 1;
+        }
+        int skip = pageSize * (pageNo - 1);
+        Query query = new Query().skip(skip).limit(pageSize);
+        query.with(Sort.by(direction, sortField));
+        if (criteria != null) {
+            query.addCriteria(criteria);
+        }
+        List<?> list = mongodbUtil.mongoTemplate.find(query, clazz, collName);
+        PageModel pageModel = new PageModel();
+        pageModel.setPageNo(pageNo);
+        pageModel.setPageSize(pageSize);
+        pageModel.setTotal(count);
+        pageModel.setPages(pages);
+        pageModel.setList(list);
+        return pageModel;
+    }
+
+    /**
+     * 分页查询
+     *
+     * @param clazz     数据实体类
+     * @param collName  集合名称
+     * @param map       Map<"查询条件key"，查询条件值> map 若 keys/values 为null,则查询集合中所有数据
+     * @param pageNo    当前页
+     * @param pageSize  当前页数据条数
+     * @param direction Direction.Desc/ASC 排序方式
+     * @param sortField 排序字段
+     * @return
+     */
+    public static PageModel findSortPageCondition(Class<?> clazz,
+                                                  String collName,
+                                                  Map<String, Object> map,
+                                                  int pageNo,
+                                                  int pageSize,
+                                                  Sort.Direction direction,
+                                                  String sortField
+    ) {
+
+        Criteria criteria = getCriteria(new Criteria(), map);
         long count;
 
         if (criteria == null) {

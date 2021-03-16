@@ -36,7 +36,7 @@ public class UploadFileController {
     @PostMapping("/paper")
     @PassToken
     public Response<String> uploadPaper(MultipartFile file) throws IOException {
-        File paper = new File("/Users/huanchen/Project/out/paper-resource-backend/" + file.getOriginalFilename());
+        File paper = new File("/opt/paper/" + file.getOriginalFilename());
         file.transferTo(paper);
         String fileType = FileTypeUtils.getFileTypeByFile(paper);
         return new Response(0, fileType, "上传成功");

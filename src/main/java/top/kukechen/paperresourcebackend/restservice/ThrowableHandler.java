@@ -11,8 +11,7 @@ public class ThrowableHandler {
     public static Response handle(Throwable t) {
         Response response = new Response();
         response.setStatus(Response.STAUTS_FAILED);
-        response.setErrorMsg(t.getMessage());
-//        response.setErrorStack(getErrorStack(t));
+        response.setErrorMsg(t.toString());
         return response;
     }
 

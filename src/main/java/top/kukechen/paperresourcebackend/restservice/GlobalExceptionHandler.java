@@ -14,7 +14,7 @@ import top.kukechen.paperresourcebackend.errorHandle.NeedToLogin;
 public class GlobalExceptionHandler {
 
     @ResponseStatus(HttpStatus.UNAUTHORIZED)
-    @ExceptionHandler({Throwable.class})
+    @ExceptionHandler(value = NeedToLogin.class)
     public Response handleLogin(Throwable e) {
         e.printStackTrace();
         if(e instanceof NeedToLogin) {

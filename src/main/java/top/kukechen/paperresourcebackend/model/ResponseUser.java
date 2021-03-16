@@ -1,25 +1,15 @@
 package top.kukechen.paperresourcebackend.model;
+import lombok.Data;
 
+@Data
 public class ResponseUser {
     private String userName;
     private String token;
+    private WxUser wxUser;
 
-    public String getUserName() {
-        return userName;
+    public ResponseUser() {
+
     }
-
-    public void setUserName(String userName) {
-        this.userName = userName;
-    }
-
-    public String getToken() {
-        return token;
-    }
-
-    public void setToken(String token) {
-        this.token = token;
-    }
-
     public ResponseUser(String userName, String token) {
         this.userName = userName;
         this.token = token;

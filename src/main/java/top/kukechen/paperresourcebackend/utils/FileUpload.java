@@ -74,7 +74,7 @@ public class FileUpload {
                 .addFormDataPart("file", file.getName(), requestBody)
                 .build();
         Request request = new Request.Builder()
-                .url("http://api-paperfile.kukechen.top/fileUpload")
+                .url("http://103.100.210.203:8012/fileUpload")
                 .post(multipartBody)
                 .build();
         Response response = client.newCall(request).execute();

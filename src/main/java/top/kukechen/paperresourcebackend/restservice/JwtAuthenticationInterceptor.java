@@ -34,13 +34,16 @@ public class JwtAuthenticationInterceptor implements HandlerInterceptor {
             }
         }
         else {
-            System.out.println("被jwt拦截需要验证");
-            // 执行认证
             if (token == null) {
                 throw new NeedToLogin();
             }
+            try {
                 DecodedJWT decodedJWT = JwtUtils.verifyToken(token);
-//            String userId = decodedJWT.getClaim("userId").asString();
+            }catch (Exception e) {
+                logger.error(e.getMessage());
+                throw new NeedToLogin();
+            }
+//          String userId = decodedJWT.getClaim("userId").asString();
             return true;
         }
         return true;

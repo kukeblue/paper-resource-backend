@@ -13,6 +13,7 @@ import java.util.ArrayList;
 @EqualsAndHashCode(callSuper = true)
 public class Paper extends BaseModel {
     long size;
+    boolean createPreviewFile = false;
     String id;
     String name;
     String fileName;
@@ -23,6 +24,9 @@ public class Paper extends BaseModel {
     double price;
     String gradeStepId;
     String year;
+    int totalPage = 0;
+    int pageView;
+    int download;
     ArrayList tagIds = new ArrayList<String>();
     ArrayList previewLinks = new ArrayList<String>();
     ArrayList region = new ArrayList<String>();

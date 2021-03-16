@@ -33,4 +33,18 @@ public class PdfUtils {
             return "";
         }
     }
+
+    public static int getPdfPageSize(File file) {
+        try {
+            InputStream is = null;
+            PDDocument document = null;
+            document = PDDocument.load(file);
+            int pageSize = document.getNumberOfPages();
+            return pageSize;
+        }catch (IOException e) {
+            logger.error("PDF读取失败");
+            e.printStackTrace();
+            return 0;
+        }
+    }
 }
