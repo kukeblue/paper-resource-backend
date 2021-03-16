@@ -25,12 +25,13 @@ import static top.kukechen.paperresourcebackend.restservice.Response.STAUTS_FAIL
 import static top.kukechen.paperresourcebackend.restservice.Response.STAUTS_OK;
 
 @RestController
-@RequestMapping("/wxUser")
+@RequestMapping("/wx")
 
 public class WxUserController {
     private  String appId = "wx4f594f42b6ca60d8";
     private String secret = "1a085e09f9e33c687ffe0ce6a031e3e6";
     private static Logger logger = LoggerFactory.getLogger(WxUserController.class);
+
     @PassToken
     @RequestMapping("/login")
     @ResponseBody
@@ -67,25 +68,27 @@ public class WxUserController {
         }
         mongoTemplate.save(wxUser);
         return new Response(0, wxUser);
-    }
-    @PostMapping("/list")
-    @PassToken
-    public Response<Tag> getWxUserList() {
-        MongoTemplate mongoTemplate = MongoDBUtil.mongodbUtil.mongoTemplate;
-        List<WxUser> list = mongoTemplate.findAll(WxUser.class, "wx_user");
-        return new Response(STAUTS_OK, list);
-    }
-    @PostMapping("/delete")
-    @PassToken
-    public Response<Tag> deleteWxUser(@RequestBody ResponseWrap rw) {
-        String id = rw.getId();
-        logger.info("开始删除微信用户 " + id);
-        int result = MongoDBUtil.removeById(id, "wx_user");
-        logger.info("删除标签成功: id为" + id + " 删除结果 - result: " + result);
-        if (result == 1) {
-            return new Response(STAUTS_OK, "删除成功");
-        } else {
-            return new Response(STAUTS_FAILED, "删除失败");
-        }
-    }
+    }   
+
+//    @PostMapping("/list")
+//    @PassToken
+//    public Response<Tag> getWxUserList() {
+//        MongoTemplate mongoTemplate = MongoDBUtil.mongodbUtil.mongoTemplate;
+//        List<WxUser> list = mongoTemplate.findAll(WxUser.class, "wx_user");
+//        return new Response(STAUTS_OK, list);
+//    }
+//
+//    @PostMapping("/delete")
+//    @PassToken
+//    public Response<Tag> deleteWxUser(@RequestBody ResponseWrap rw) {
+//        String id = rw.getId();
+//        logger.info("开始删除微信用户 " + id);
+//        int result = MongoDBUtil.removeById(id, "wx_user");
+//        logger.info("删除标签成功: id为" + id + " 删除结果 - result: " + result);
+//        if (result == 1) {
+//            return new Response(STAUTS_OK, "删除成功");
+//        } else {
+//            return new Response(STAUTS_FAILED, "删除失败");
+//        }
+//    }
 }
